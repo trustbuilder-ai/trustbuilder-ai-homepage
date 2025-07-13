@@ -1,0 +1,115 @@
+# Resource Download Manifest
+# Location: docs/references/MANIFEST.yaml
+# Generated: 2025-07-13
+
+resources:
+  - filename: "youtube-convinced-chatgpt-god-exists-transcript.txt"
+    original_url: "https://www.youtube.com/watch?v=wS7IPxLZrR4"
+    title: "I Convinced ChatGPT that God Exists"
+    author: "Alex O'Connor"
+    channel: "Alex O'Connor"
+    upload_date: "2023-10-23"
+    duration_seconds: 1276
+    date_accessed: "2025-07-13"
+    type: "youtube_transcript"
+    citation: "O'Connor, A. (2023, October 23). I convinced ChatGPT that God exists [Video]. YouTube. https://www.youtube.com/watch?v=wS7IPxLZrR4"
+    
+  - filename: "openai-2025-sycophancy-in-gpt-4o.pdf"
+    original_url: "https://openai.com/index/sycophancy-in-gpt-4o/"
+    title: "Sycophancy in GPT-4o: What happened and what we're doing about it"
+    author: "OpenAI"
+    publication_date: "2025-04-29"
+    date_accessed: "2025-07-13"
+    type: "blog_post"
+    citation: "OpenAI. (2025, April 29). Sycophancy in GPT-4o: What happened and what we're doing about it. https://openai.com/index/sycophancy-in-gpt-4o/"
+    
+  - filename: "nvidia-2025-defining-llm-red-teaming.pdf"
+    original_url: "https://developer.nvidia.com/blog/defining-llm-red-teaming/"
+    title: "Defining LLM Red Teaming"
+    author: "Leon Derczynski, Rich Harang, and Sadaf Khan"
+    publication_date: "2025-02-25"
+    date_accessed: "2025-07-13"
+    type: "blog_post"
+    citation: "Derczynski, L., Harang, R., & Khan, S. (2025, February 25). Defining LLM red teaming. NVIDIA Technical Blog. https://developer.nvidia.com/blog/defining-llm-red-teaming/"
+    
+  - filename: "meibel-2025-understanding-llm-context-windows.pdf"
+    original_url: "https://www.meibel.ai/post/understanding-the-impact-of-increasing-llm-context-windows"
+    title: "Understanding the Impact of Increasing LLM Context Windows"
+    author: "Spencer Torene, Ph.D."
+    contributors: ["Berk Ekmekci", "Alex Powell"]
+    publication_date: "2025-04-27"
+    date_accessed: "2025-07-13"
+    type: "blog_post"
+    citation: "Torene, S. (2025, April 27). Understanding the impact of increasing LLM context windows. Meibel. https://www.meibel.ai/post/understanding-the-impact-of-increasing-llm-context-windows"
+    
+  - filename: "google-project-zero-vulnerability-disclosure-policy.pdf"
+    original_url: "https://googleprojectzero.blogspot.com/p/vulnerability-disclosure-policy.html"
+    title: "Vulnerability Disclosure Policy"
+    author: "Google Project Zero"
+    publication_date: "n.d."
+    date_accessed: "2025-07-13"
+    type: "policy_document"
+    citation: "Google Project Zero. (n.d.). Vulnerability disclosure policy. https://googleprojectzero.blogspot.com/p/vulnerability-disclosure-policy.html"
+    
+  - filename: "plos-2024-summon-demon-llm-red-teaming.pdf"
+    original_url: "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0314658"
+    title: "Summon a demon and bind it: A grounded theory of LLM red teaming"
+    author: "Inie, N., Stray, J., & Derczynski, L."
+    publication_date: "2024"
+    date_accessed: "2025-07-13"
+    type: "academic_paper"
+    doi: "10.1371/journal.pone.0314658"
+    citation: "Inie, N., Stray, J., & Derczynski, L. (2024). Summon a demon and bind it: A grounded theory of LLM red teaming. PLoS ONE, 19(1), e0314658. https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0314658"
+    
+  - filename: "google-how-handles-security-vulnerabilities.pdf"
+    original_url: "https://about.google/company-info/appsecurity/"
+    title: "How Google handles security vulnerabilities"
+    author: "Google"
+    publication_date: "n.d."
+    date_accessed: "2025-07-13"
+    type: "company_page"
+    citation: "Google. (n.d.). How Google handles security vulnerabilities. https://about.google/company-info/appsecurity/"
+    
+  - filename: "owasp-2025-llm-top-10.pdf"
+    original_url: "https://genai.owasp.org/llm-top-10/"
+    title: "OWASP Top 10 for LLM Applications 2025"
+    author: "OWASP"
+    publication_date: "2025"
+    date_accessed: "2025-07-13"
+    type: "security_guide"
+    citation: "OWASP. (2025). OWASP top 10 for LLM applications. https://genai.owasp.org/llm-top-10/"
+    
+  - filename: "anthropic-mcp-clients.pdf"
+    original_url: "https://modelcontextprotocol.io/clients"
+    title: "Model Context Protocol Clients"
+    author: "Anthropic"
+    publication_date: "n.d."
+    date_accessed: "2025-07-13"
+    type: "documentation"
+    citation: "Anthropic. (n.d.). Model Context Protocol clients. https://modelcontextprotocol.io/clients"
+    
+  - filename: "owasp-vulnerability-disclosure-cheat-sheet.pdf"
+    original_url: "https://cheatsheetseries.owasp.org/cheatsheets/Vulnerability_Disclosure_Cheat_Sheet.html"
+    title: "Vulnerability Disclosure Cheat Sheet"
+    author: "OWASP"
+    publication_date: "n.d."
+    date_accessed: "2025-07-13"
+    type: "cheat_sheet"
+    citation: "OWASP. (n.d.). Vulnerability disclosure cheat sheet. https://cheatsheetseries.owasp.org/cheatsheets/Vulnerability_Disclosure_Cheat_Sheet.html"
+
+# Summary Statistics
+summary:
+  total_resources: 10
+  resource_types:
+    youtube_transcript: 1
+    blog_post: 3
+    policy_document: 1
+    academic_paper: 1
+    company_page: 1
+    security_guide: 1
+    documentation: 1
+    cheat_sheet: 1
+  date_range:
+    earliest: "2023-10-23"
+    latest: "2025-04-29"
+  total_size_bytes: ~8.5MB

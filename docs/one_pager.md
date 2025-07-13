@@ -6,7 +6,7 @@ This is a draft business outline, the intent of which is to establish a problem 
 ### <ins>Definitions</ins>
 
 **Model Context Protocol (MCP clients):** Tool calling.  An agentic world.<br>
-**Red Teaming:** https://developer.nvidia.com/blog/defining-llm-red-teaming/<br>
+**Red Teaming:** See [3]<br>
 **MCP Clients:**<br>
 
 ### <ins>Our Foundational Question and the WeFunder Hackathon</ins>
@@ -15,7 +15,7 @@ We built an orchestrator platform for MCP servers, generators for parametized fa
 
 ### <ins>Product Overview</ins>
 
-Broadly, we're crowdsourcing the red teaming of LLMs by providing a platform with state of the art tools and by hosting competitions to jailbreak or get the LLM to perform mocked malicious actions.  Specifically our platform provides a slate of MCP servers, MCP clients, and LLM for finding issues, with an emphasis on complex agentic workflows, tracking state on our servers, and evaluating on both established taxonomies ("[quote from paper]"[CITIATION NUMBER]) and using novel severity grading of exploits.
+Broadly, we're crowdsourcing the red teaming of LLMs by providing a platform with state of the art tools and by hosting competitions to jailbreak or get the LLM to perform mocked malicious actions.  Specifically our platform provides a slate of MCP servers, MCP clients, and LLM for finding issues, with an emphasis on complex agentic workflows, tracking state on our servers, and evaluating on both established taxonomies [6] and using novel severity grading of exploits.
 
 ### <ins>Go to Market Plan: War Games and a Freemium Model</ins>
 
@@ -29,7 +29,7 @@ The platform will operate under a freemium model wherein the base platform, incl
 
 ### <ins>Why This, Why Now, and the Importance of Intuition</ins>
 
-We believe that bridging the grassroots approach to LLM red teaming [CITATION: Demon article] with state of the art technology and a structured ethical framework can surface vulnerabilities most effectively as well as provide a strong business value to customers. As noted in [2], human intuition is a critical factor in understanding the limitations of LLMs.
+We believe that bridging the grassroots approach to LLM red teaming [6] with state of the art technology and a structured ethical framework can surface vulnerabilities most effectively as well as provide a strong business value to customers. As noted in [6], human intuition is a critical factor in understanding the limitations of LLMs.
 
 [Quote on Intuition]
 
@@ -101,7 +101,7 @@ Novel agent creation.  The use of existing agents via docker.
 
 Existing red team tools can be leveraged to do a first pass evaluation of a prompt.
 
-Mindset shift - we feel that disclosure should be considered differently. Existing red teaming solutions are intended to safeguard against first-order, shallow attacks.  They don't take into account longer context windows. **Review the summoning the demon paper that might contradict previous statement.**
+Mindset shift - we feel that disclosure should be considered differently. Existing red teaming solutions are intended to safeguard against first-order, shallow attacks.  They don't take into account longer context windows. **Note: See [6] for contrasting perspectives on red teaming approaches.**
 
 Further many existing approaches do not leverage MCP to its full extent today.
 
@@ -113,40 +113,27 @@ https://www.trydeepteam.com
 
 ### References:
 
-I Convinced ChatGPT that God Exists
+[1] O'Connor, A. (2023, October 23). *I convinced ChatGPT that God exists* [Video]. YouTube. https://www.youtube.com/watch?v=wS7IPxLZrR4
 
-https://www.youtube.com/watch?v=wS7IPxLZrR4
+[2] OpenAI. (2025, April 29). *Sycophancy in GPT-4o: What happened and what we're doing about it*. https://openai.com/index/sycophancy-in-gpt-4o/
 
-Sycophancy in GPT-4o: what happened and what we’re doing about it
+[3] Derczynski, L., Harang, R., & Khan, S. (2025, February 25). *Defining LLM red teaming*. NVIDIA Technical Blog. https://developer.nvidia.com/blog/defining-llm-red-teaming/
 
-https://openai.com/index/sycophancy-in-gpt-4o/
+[4] Torene, S. (2025, April 27). *Understanding the impact of increasing LLM context windows*. Meibel. https://www.meibel.ai/post/understanding-the-impact-of-increasing-llm-context-windows
 
-Defining LLM Red Teaming
+[5] Google Project Zero. (n.d.). *Vulnerability disclosure policy*. https://googleprojectzero.blogspot.com/p/vulnerability-disclosure-policy.html
 
-https://developer.nvidia.com/blog/defining-llm-red-teaming/
+[6] Inie, N., Stray, J., & Derczynski, L. (2024). Summon a demon and bind it: A grounded theory of LLM red teaming. *PLoS ONE*, 19(1), e0314658. https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0314658
 
-Understanding the Impact of Increasing LLM Context Windows
+[7] Google. (n.d.). *How Google handles security vulnerabilities*. https://about.google/company-info/appsecurity/
 
-https://www.meibel.ai/post/understanding-the-impact-of-increasing-llm-context-windows
+[8] OWASP. (2025). *OWASP top 10 for LLM applications*. https://genai.owasp.org/llm-top-10/
 
-https://googleprojectzero.blogspot.com/p/vulnerability-disclosure-policy.html
+[9] Anthropic. (n.d.). *Model Context Protocol clients*. https://modelcontextprotocol.io/clients
 
-Summon a demon and bind it: A grounded theory of LLM red teaming:
-https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0314658
+[10] OWASP. (n.d.). *Vulnerability disclosure cheat sheet*. https://cheatsheetseries.owasp.org/cheatsheets/Vulnerability_Disclosure_Cheat_Sheet.html
 
-Defining LLM Red Teaming
-https://developer.nvidia.com/blog/defining-llm-red-teaming/
-
-How Google handles security vulnerabilities
-https://about.google/company-info/appsecurity/
-
-Top 10 risks and mitigations:
-https://genai.owasp.org/llm-top-10/
-
-Example Clients:
-https://modelcontextprotocol.io/clients
-
-Vulnerability Disclosure Cheat Sheet
-https://cheatsheetseries.owasp.org/cheatsheets/Vulnerability_Disclosure_Cheat_Sheet.html
+---
+*Note: All references have been archived in `docs/references/` with access dates recorded in `MANIFEST.yaml`*
 
 
