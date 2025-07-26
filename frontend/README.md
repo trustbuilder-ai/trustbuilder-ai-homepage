@@ -16,8 +16,16 @@ Modern, interactive API documentation for the TrustBuilder Wargames AI server.
 ## Appearance
 
 <details>
-  <summary>Cyberphnk theme</summary>
-  <img src="assets/images/frontend_prototype_cyberphnk.PNG" alt="Customer Journey" title="Customer Journey" width="60%" />
+  <summary>Cyberphnk Theme</summary>
+  <img src="assets/images/fe_cyberphnk_theme.PNG" alt="Customer Journey" title="Customer Journey" width="60%" />
+</details>
+<details>
+  <summary>Light Theme</summary>
+  <img src="assets/images/fe_light_theme.PNG" alt="Customer Journey" title="Customer Journey" width="60%" />
+</details>
+<details>
+  <summary>Dark Theme</summary>
+  <img src="assets/images/fe_dark_theme.PNG" alt="Customer Journey" title="Customer Journey" width="60%" />
 </details>
 
 ## 🔧 Configuration

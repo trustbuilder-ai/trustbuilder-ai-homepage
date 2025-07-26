@@ -19,8 +19,11 @@
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
     
+    <!-- Layout CSS (theme-independent) -->
+    <link rel="stylesheet" href="src/layout.css">
+    
     <!-- Cyberpunk Theme -->
-    <link rel="stylesheet" href="src/themes/cyberpunk_theme_1.css" data-theme="cyberpunk">
+    <link rel="stylesheet" href="src/themes/cyberpunk_theme.css" data-theme="cyberpunk">
 </head>
 <body class="min-h-screen cyber-grid">
     <!-- Header -->
@@ -118,7 +121,8 @@
                             <label class="text-xs text-gray-500 mb-2 block">THEME</label>
                             <select id="themeSelector" class="cyber-input w-full text-sm" onchange="switchTheme(this.value)">
                                 <option value="cyberpunk">Cyberpunk</option>
-                                <option value="grok_light">Grok Light</option>
+                                <option value="light">Light</option>
+                                <option value="dark">Dark</option>
                             </select>
                         </div>
                     </div>
@@ -314,9 +318,11 @@
             themeLink.setAttribute('data-theme', themeName);
             
             if (themeName === 'cyberpunk') {
-                themeLink.href = 'src/themes/cyberpunk_theme_1.css';
-            } else if (themeName === 'grok_light') {
-                themeLink.href = 'src/themes/grok_light_theme.css';
+                themeLink.href = 'src/themes/cyberpunk_theme.css';
+            } else if (themeName === 'light') {
+                themeLink.href = 'src/themes/light_theme.css';
+            } else if (themeName === 'dark') {
+                themeLink.href = 'src/themes/dark_theme.css';
             }
             
             document.head.appendChild(themeLink);
