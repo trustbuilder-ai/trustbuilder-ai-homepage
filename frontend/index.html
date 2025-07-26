@@ -19,183 +19,8 @@
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
     
-    <style>
-        :root {
-            --background: #0a0a0a;
-            --foreground: #e0e0e0;
-            --card: #111111;
-            --card-foreground: #e0e0e0;
-            --popover: #1a1a1a;
-            --popover-foreground: #e0e0e0;
-            --primary: #00ff88;
-            --primary-foreground: #000000;
-            --secondary: #1e1e1e;
-            --secondary-foreground: #e0e0e0;
-            --muted: #2a2a2a;
-            --muted-foreground: #888888;
-            --accent: #00ccff;
-            --accent-foreground: #000000;
-            --destructive: #ff0055;
-            --destructive-foreground: #ffffff;
-            --border: #333333;
-            --input: #1a1a1a;
-            --ring: #00ff88;
-            --font-sans: 'Space Mono', 'JetBrains Mono', monospace;
-            --font-mono: 'JetBrains Mono', 'Space Mono', monospace;
-            --radius: 0.25rem;
-            --glow-primary: 0 0 20px rgba(0, 255, 136, 0.6);
-            --glow-accent: 0 0 20px rgba(0, 204, 255, 0.6);
-            --glow-destructive: 0 0 20px rgba(255, 0, 85, 0.6);
-        }
-
-        * {
-            font-family: var(--font-mono) !important;
-            letter-spacing: 0.05em;
-        }
-
-        body {
-            background-color: var(--background);
-            color: var(--foreground);
-            background-image: 
-                radial-gradient(circle at 20% 50%, rgba(0, 255, 136, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 80%, rgba(0, 204, 255, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 40% 20%, rgba(255, 0, 255, 0.05) 0%, transparent 50%);
-        }
-
-        /* Cyberpunk grid background */
-        .cyber-grid {
-            background-image: 
-                linear-gradient(rgba(0, 255, 136, 0.1) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(0, 255, 136, 0.1) 1px, transparent 1px);
-            background-size: 50px 50px;
-            background-position: -1px -1px;
-        }
-
-        /* Glowing borders */
-        .glow-border {
-            border: 1px solid var(--primary);
-            box-shadow: var(--glow-primary), inset 0 0 10px rgba(0, 255, 136, 0.1);
-        }
-
-        .glow-border-accent {
-            border: 1px solid var(--accent);
-            box-shadow: var(--glow-accent), inset 0 0 10px rgba(0, 204, 255, 0.1);
-        }
-
-        /* Custom scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-            height: 8px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: var(--muted);
-            border-radius: 4px;
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: var(--primary);
-            border-radius: 4px;
-            box-shadow: var(--glow-primary);
-        }
-
-        /* Animations */
-        @keyframes pulse-glow {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.5; }
-        }
-
-        .pulse-glow {
-            animation: pulse-glow 2s ease-in-out infinite;
-        }
-
-        @keyframes typing {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0; }
-        }
-
-        .typing-cursor::after {
-            content: '|';
-            animation: typing 1s ease-in-out infinite;
-            color: var(--primary);
-        }
-
-        /* Button styles */
-        .cyber-button {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
-            color: var(--background);
-            font-weight: 600;
-            padding: 0.5rem 1.5rem;
-            border-radius: var(--radius);
-            transition: all 0.3s ease;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .cyber-button:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--glow-primary);
-        }
-
-        .cyber-button:active {
-            transform: translateY(0);
-        }
-
-        /* Input styles */
-        .cyber-input {
-            background: var(--input);
-            border: 1px solid var(--border);
-            color: var(--foreground);
-            padding: 0.75rem 1rem;
-            border-radius: var(--radius);
-            transition: all 0.3s ease;
-        }
-
-        .cyber-input:focus {
-            outline: none;
-            border-color: var(--primary);
-            box-shadow: var(--glow-primary);
-        }
-
-        /* Card styles */
-        .cyber-card {
-            background: var(--card);
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            padding: 1.5rem;
-            transition: all 0.3s ease;
-        }
-
-        .cyber-card:hover {
-            border-color: var(--primary);
-            box-shadow: 0 0 30px rgba(0, 255, 136, 0.2);
-        }
-
-        .option-button {
-            background: var(--secondary);
-            border: 1px solid var(--border);
-            color: var(--foreground);
-            padding: 0.5rem 1rem;
-            border-radius: var(--radius);
-            transition: all 0.3s ease;
-            font-size: 0.875rem;
-        }
-
-        .option-button:hover {
-            border-color: var(--accent);
-            box-shadow: var(--glow-accent);
-            transform: translateY(-1px);
-        }
-
-        .option-button.active {
-            background: var(--primary);
-            color: var(--background);
-            border-color: var(--primary);
-            box-shadow: var(--glow-primary);
-        }
-    </style>
+    <!-- Cyberpunk Theme -->
+    <link rel="stylesheet" href="src/themes/cyberpunk_theme_1.css" data-theme="cyberpunk">
 </head>
 <body class="min-h-screen cyber-grid">
     <!-- Header -->
@@ -287,6 +112,15 @@
                             <i data-lucide="shield" class="w-4 h-4 mr-2"></i>
                             AUTH
                         </h3>
+                        
+                        <!-- Theme Selector -->
+                        <div class="mb-4">
+                            <label class="text-xs text-gray-500 mb-2 block">THEME</label>
+                            <select id="themeSelector" class="cyber-input w-full text-sm" onchange="switchTheme(this.value)">
+                                <option value="cyberpunk">Cyberpunk</option>
+                                <option value="grok_light">Grok Light</option>
+                            </select>
+                        </div>
                     </div>
 
                     <!-- Join Game Section -->
@@ -387,11 +221,11 @@
     <!-- Auth Modal -->
     <div id="authModal" class="fixed inset-0 z-50 hidden">
         <!-- Backdrop -->
-        <div class="fixed inset-0 bg-black/80 backdrop-blur-sm" onclick="closeAuthModal()"></div>
+        <div class="fixed inset-0 bg-black/80 backdrop-blur-sm"></div>
         
         <!-- Modal Content -->
-        <div class="fixed inset-0 flex items-center justify-center p-4">
-            <div class="cyber-card glow-border w-full max-w-md relative">
+        <div class="fixed inset-0 flex items-center justify-center p-4" onclick="closeAuthModal()">
+            <div class="cyber-card glow-border w-full max-w-md relative" onclick="event.stopPropagation()">
                 <!-- Close Button -->
                 <button onclick="closeAuthModal()" class="absolute top-4 right-4 text-gray-400 hover:text-green-400 transition-colors">
                     <i data-lucide="x" class="w-5 h-5"></i>
@@ -466,6 +300,36 @@
             if (e.key === 'Escape') {
                 closeAuthModal();
             }
+        });
+
+        // Theme switching functionality
+        function switchTheme(themeName) {
+            // Remove existing theme links
+            const existingThemeLinks = document.querySelectorAll('link[data-theme]');
+            existingThemeLinks.forEach(link => link.remove());
+            
+            // Add new theme link
+            const themeLink = document.createElement('link');
+            themeLink.rel = 'stylesheet';
+            themeLink.setAttribute('data-theme', themeName);
+            
+            if (themeName === 'cyberpunk') {
+                themeLink.href = 'src/themes/cyberpunk_theme_1.css';
+            } else if (themeName === 'grok_light') {
+                themeLink.href = 'src/themes/grok_light_theme.css';
+            }
+            
+            document.head.appendChild(themeLink);
+            
+            // Store theme preference
+            localStorage.setItem('selectedTheme', themeName);
+        }
+        
+        // Load saved theme on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedTheme = localStorage.getItem('selectedTheme') || 'cyberpunk';
+            document.getElementById('themeSelector').value = savedTheme;
+            switchTheme(savedTheme);
         });
 
         // Mode toggle
