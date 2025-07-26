@@ -220,9 +220,9 @@
     <main class="container mx-auto px-8 pt-24 pb-16">
         <div class="flex flex-col lg:flex-row gap-12">
             <!-- Left Column: Model Output & User Input -->
-            <div class="flex-1 space-y-10">
+            <div class="flex-1 flex flex-col gap-10">
                 <!-- Model Output -->
-                <div class="cyber-card glow-border">
+                <div class="cyber-card glow-border flex-1">
                     <div class="flex items-center justify-between mb-6">
                         <h2 class="text-xl font-semibold text-green-400">MODEL OUTPUT</h2>
                         <button class="text-gray-400 hover:text-green-400 transition-colors">
@@ -283,14 +283,10 @@
                     
                     <!-- Auth Section -->
                     <div class="mb-8">
-                        <h3 class="text-sm font-semibold text-gray-400 mb-4 flex items-center">
+                        <h3 class="text-sm font-semibold text-gray-400 mb-4 flex items-center cursor-pointer hover:text-green-400 transition-colors" onclick="openAuthModal()">
                             <i data-lucide="shield" class="w-4 h-4 mr-2"></i>
                             AUTH
                         </h3>
-                        <div class="space-y-3">
-                            <button class="option-button w-full text-left">Login</button>
-                            <button class="option-button w-full text-left">API Keys</button>
-                        </div>
                     </div>
 
                     <!-- Join Game Section -->
@@ -388,9 +384,89 @@
         </div>
     </footer>
 
+    <!-- Auth Modal -->
+    <div id="authModal" class="fixed inset-0 z-50 hidden">
+        <!-- Backdrop -->
+        <div class="fixed inset-0 bg-black/80 backdrop-blur-sm" onclick="closeAuthModal()"></div>
+        
+        <!-- Modal Content -->
+        <div class="fixed inset-0 flex items-center justify-center p-4">
+            <div class="cyber-card glow-border w-full max-w-md relative">
+                <!-- Close Button -->
+                <button onclick="closeAuthModal()" class="absolute top-4 right-4 text-gray-400 hover:text-green-400 transition-colors">
+                    <i data-lucide="x" class="w-5 h-5"></i>
+                </button>
+                
+                <!-- Modal Header -->
+                <div class="flex items-center mb-6">
+                    <i data-lucide="shield" class="w-5 h-5 mr-3 text-green-400"></i>
+                    <h2 class="text-xl font-semibold text-green-400">AUTHENTICATION</h2>
+                </div>
+                
+                <!-- Auth Options -->
+                <div class="space-y-4">
+                    <div class="space-y-3">
+                        <h3 class="text-sm font-semibold text-gray-400 uppercase">Login Options</h3>
+                        <button class="option-button w-full text-left flex items-center">
+                            <i data-lucide="user" class="w-4 h-4 mr-3"></i>
+                            Username/Password
+                        </button>
+                        <button class="option-button w-full text-left flex items-center">
+                            <i data-lucide="github" class="w-4 h-4 mr-3"></i>
+                            GitHub OAuth
+                        </button>
+                        <button class="option-button w-full text-left flex items-center">
+                            <i data-lucide="key" class="w-4 h-4 mr-3"></i>
+                            API Token
+                        </button>
+                    </div>
+                    
+                    <hr class="border-gray-700">
+                    
+                    <div class="space-y-3">
+                        <h3 class="text-sm font-semibold text-gray-400 uppercase">API Management</h3>
+                        <button class="option-button w-full text-left flex items-center">
+                            <i data-lucide="settings" class="w-4 h-4 mr-3"></i>
+                            Manage API Keys
+                        </button>
+                        <button class="option-button w-full text-left flex items-center">
+                            <i data-lucide="plus" class="w-4 h-4 mr-3"></i>
+                            Generate New Key
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Modal Footer -->
+                <div class="mt-6 pt-4 border-t border-gray-700">
+                    <div class="flex items-center justify-between text-xs text-gray-500">
+                        <span>Status: Not Authenticated</span>
+                        <div class="w-2 h-2 bg-red-400 rounded-full"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <script>
         // Initialize Lucide icons
         lucide.createIcons();
+
+        // Auth Modal Functions
+        function openAuthModal() {
+            document.getElementById('authModal').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeAuthModal() {
+            document.getElementById('authModal').classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal on Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeAuthModal();
+            }
+        });
 
         // Mode toggle
         document.querySelectorAll('.option-button').forEach(button => {
