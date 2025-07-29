@@ -1,7 +1,6 @@
 .SILENT:
 .ONESHELL:
-.PHONY: claude_cli gemini_cli
-.DEFAULT_GOAL := setup_claude_code
+.PHONY: claude_cli gemini_cli homepage_dev wargames_dev
 
 claude_cli:
 	echo "Setting up claude code ..."
@@ -14,3 +13,13 @@ gemini_cli:
 	echo "Setting up Gemini CLI ..."
 	npm install -g @google/gemini-cli
 	echo "Gemini CLI version: $$(gemini --version)"
+
+homepage_dev:
+	cd trustbuilder-page
+	npm install
+	npm run dev
+
+wargames_dev:
+	cd wargames-fe
+	npm install
+	npm run dev
