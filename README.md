@@ -12,7 +12,6 @@
 ### TrustBuilder Homepage
 
 ```sh
-# 
 cd trustbuilder-page
 npm install
 npm run dev
@@ -21,7 +20,6 @@ npm run dev
 ### Wargames Suite Frontend
 
 ```sh
-# 
 cd wargames-fe
 npm install
 npm run dev
