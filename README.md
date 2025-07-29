@@ -1,6 +1,6 @@
 # TrustBuilder-AI Wargames Suite
 
-[![CodeFactor](https://www.codefactor.io/repository/github/trustbuilder-ai/wargames-ai/badge)](https://www.codefactor.io/repository/github/trustbuilder-ai/wargames-ai)
+[![CodeFactor](https://www.codefactor.io/repository/github/trustbuilder-ai/trustbuilder-ai-frontends/badge)](https://www.codefactor.io/repository/github/trustbuilder-ai/trustbuilder-ai-frontends)
 
 ## Content
 
