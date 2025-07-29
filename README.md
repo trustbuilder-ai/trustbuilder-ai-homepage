@@ -7,6 +7,30 @@
 - [TrustBuilder-AI home page](trustbuilder-page/README.md)
 - [TrustBuilder-aI WarGames AI](wargames-fe/README.md)
 
+## Setup
+
+### TrustBuilder Homepage
+
+`make setup_homepage`
+
+or
+
+```sh
+cd trustbuilder-page
+pnpm install
+```
+
+### Wargames Suite Frontend
+
+`make setup_wargames`
+
+or
+
+```sh
+cd wargames-fe
+pnpm install
+```
+
 ## Usage
 
 ### TrustBuilder Homepage
