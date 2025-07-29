@@ -1,0 +1,202 @@
+/* Gummyloop Theme - Glossy and Vibrant */
+
+:root {
+  /* Fonts */
+  --font-primary:
+    "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-heading: "Inter", sans-serif;
+  --font-body: "Inter", sans-serif;
+  --font-ui: "Inter", sans-serif;
+  --font-brand: "Inter", sans-serif;
+  --font-mono: "SF Mono", "Monaco", "Inconsolata", "Roboto Mono", monospace;
+
+  /* Colors */
+  --primary-color: #7c3aed;
+  --primary-dark: #6d28d9;
+  --secondary-color: #ec4899;
+  --accent-color: #06b6d4;
+  --accent-bright: #0ea5e9;
+  --success-color: #10b981;
+  --warning-color: #f59e0b;
+  --accent-primary: #7c3aed;
+
+  /* Backgrounds */
+  --bg-primary: #0a0a0f;
+  --bg-secondary: #050507;
+  --section-bg-alt: #050507;
+  --footer-bg: #050507;
+  --hero-bg: radial-gradient(
+    ellipse at center,
+    rgba(124, 58, 237, 0.2) 0%,
+    transparent 70%
+  );
+  --nav-bg: rgba(10, 10, 15, 0.8);
+  --cta-bg: linear-gradient(135deg, #7c3aed 0%, #ec4899 50%, #06b6d4 100%);
+
+  /* Surfaces */
+  --surface-glass: rgba(255, 255, 255, 0.05);
+  --surface-glass-hover: rgba(124, 58, 237, 0.2);
+
+  /* Text Colors */
+  --text-primary: #ffffff;
+  --text-secondary: #e2e8f0;
+  --text-muted: #94a3b8;
+  --button-text: white;
+  --cta-secondary-text: white;
+
+  /* Borders */
+  --border-color: rgba(255, 255, 255, 0.1);
+  --border-accent: rgba(124, 58, 237, 0.3);
+
+  /* Gradients */
+  --accent-gradient: linear-gradient(
+    135deg,
+    #7c3aed 0%,
+    #ec4899 50%,
+    #06b6d4 100%
+  );
+  --secondary-gradient: linear-gradient(
+    135deg,
+    #06b6d4 0%,
+    #3b82f6 50%,
+    #8b5cf6 100%
+  );
+  --metric-gradient: linear-gradient(
+    135deg,
+    #06b6d4 0%,
+    #3b82f6 50%,
+    #8b5cf6 100%
+  );
+  --glass-overlay: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0.05) 100%
+  );
+  --shine-gradient: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+
+  /* Shadows and Glows */
+  --glow-primary: 0 0 40px rgba(124, 58, 237, 0.3);
+  --glow-primary-intense: 0 0 60px rgba(124, 58, 237, 0.6);
+  --glow-text: 0 0 10px rgba(124, 58, 237, 0.5);
+  --glow-status: 0 0 10px #10b981;
+  --glow-status-intense: 0 0 20px #10b981;
+  --glow-metric: 0 0 20px rgba(6, 182, 212, 0.5);
+  --shadow-nav: 0 4px 20px rgba(0, 0, 0, 0.3);
+  --shadow-button: 0 4px 15px rgba(124, 58, 237, 0.3);
+  --shadow-button-hover: 0 8px 25px rgba(124, 58, 237, 0.5);
+  --shadow-primary: 0 8px 25px rgba(124, 58, 237, 0.4);
+  --shadow-primary-hover: 0 15px 40px rgba(124, 58, 237, 0.6);
+  --shadow-secondary-hover: 0 10px 30px rgba(124, 58, 237, 0.3);
+  --shadow-glass: 0 8px 32px rgba(0, 0, 0, 0.3);
+  --shadow-floating:
+    0 20px 40px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  --shadow-card-hover:
+    0 25px 50px rgba(0, 0, 0, 0.4), 0 0 30px rgba(124, 58, 237, 0.3);
+  --shadow-block-hover:
+    0 20px 40px rgba(0, 0, 0, 0.3), 0 0 20px rgba(124, 58, 237, 0.2);
+  --shadow-tech-hover:
+    0 20px 40px rgba(0, 0, 0, 0.3), 0 0 25px rgba(6, 182, 212, 0.3);
+
+  /* Text Shadows */
+  --text-shadow: 0 0 30px rgba(124, 58, 237, 0.3);
+  --text-shadow-subtle: 0 0 20px rgba(0, 0, 0, 0.5);
+  --cta-text-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
+  --cta-text-shadow-subtle: 0 0 20px rgba(255, 255, 255, 0.2);
+
+  /* Glass Effects */
+  --glass-blur: blur(20px) saturate(180%);
+  --glass-blur-strong: blur(20px) saturate(180%);
+
+  /* Border Radius */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-xxl: 20px;
+
+  /* Status Colors */
+  --status-active: #10b981;
+
+  /* Background Patterns */
+  --bg-particles:
+    radial-gradient(
+      2px 2px at 20px 30px,
+      rgba(255, 255, 255, 0.1),
+      transparent
+    ),
+    radial-gradient(2px 2px at 40px 70px, rgba(124, 58, 237, 0.2), transparent),
+    radial-gradient(1px 1px at 90px 40px, rgba(236, 72, 153, 0.2), transparent);
+
+  /* Overlays */
+  --hero-overlay:
+    linear-gradient(
+      45deg,
+      transparent 30%,
+      rgba(124, 58, 237, 0.1) 50%,
+      transparent 70%
+    ),
+    linear-gradient(
+      -45deg,
+      transparent 30%,
+      rgba(236, 72, 153, 0.1) 50%,
+      transparent 70%
+    );
+  --section-overlay:
+    radial-gradient(
+      circle at 25% 25%,
+      rgba(124, 58, 237, 0.1) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 75% 75%,
+      rgba(236, 72, 153, 0.1) 0%,
+      transparent 50%
+    );
+  --section-overlay-alt:
+    linear-gradient(135deg, rgba(124, 58, 237, 0.05) 0%, transparent 50%),
+    linear-gradient(-135deg, rgba(236, 72, 153, 0.05) 0%, transparent 50%);
+  --tech-overlay:
+    radial-gradient(
+      circle at 20% 80%,
+      rgba(6, 182, 212, 0.1) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 80% 20%,
+      rgba(124, 58, 237, 0.1) 0%,
+      transparent 50%
+    );
+  --cta-overlay:
+    radial-gradient(
+      circle at 30% 70%,
+      rgba(255, 255, 255, 0.1) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 70% 30%,
+      rgba(255, 255, 255, 0.1) 0%,
+      transparent 50%
+    );
+
+  /* CTA Section Colors */
+  --cta-secondary-bg: rgba(255, 255, 255, 0.15);
+  --cta-secondary-border: rgba(255, 255, 255, 0.3);
+  --cta-secondary-bg-hover: rgba(255, 255, 255, 0.25);
+  --cta-secondary-border-hover: rgba(255, 255, 255, 0.5);
+  --cta-secondary-shadow-hover: 0 10px 30px rgba(255, 255, 255, 0.2);
+
+  /* Icons */
+  --icon-warning: "⚠️";
+  --icon-success: "✅";
+  --warning-glow: drop-shadow(0 0 5px rgba(245, 158, 11, 0.5));
+  --success-glow: drop-shadow(0 0 5px rgba(16, 185, 129, 0.5));
+  --icon-glow: drop-shadow(0 0 10px rgba(124, 58, 237, 0.5));
+
+  /* Animation Values */
+  --hue-shift: 30deg;
+}

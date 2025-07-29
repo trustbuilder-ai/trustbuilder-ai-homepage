@@ -1,0 +1,465 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TrustBuilder Wargames AI</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=JetBrains+Mono:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Flowbite -->
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.0.0/dist/flowbite.min.js"></script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+
+    <!-- Layout CSS (theme-independent) -->
+    <link rel="stylesheet" href="src/layout.css" />
+
+    <!-- Cyberpunk Theme -->
+    <link
+      rel="stylesheet"
+      href="src/themes/cyberpunk_theme.css"
+      data-theme="cyberpunk"
+    />
+  </head>
+  <body class="min-h-screen cyber-grid">
+    <!-- Header -->
+    <header
+      class="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-black/80 border-b border-gray-800"
+    >
+      <div class="container mx-auto px-8">
+        <div class="flex items-center justify-between h-16">
+          <div class="flex items-center space-x-4">
+            <h1
+              class="text-2xl font-bold bg-gradient-to-r from-green-400 to-cyan-400 bg-clip-text text-transparent"
+            >
+              WARGAMES-AI
+            </h1>
+            <span class="text-xs text-gray-500 uppercase">TrustBuilder</span>
+          </div>
+          <div class="flex items-center space-x-4">
+            <span class="text-sm text-gray-400"
+              >Connected to: wargames-ai.trb.ai</span
+            >
+            <div class="w-2 h-2 bg-green-400 rounded-full pulse-glow"></div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="container mx-auto px-8 pt-24 pb-16">
+      <div class="flex flex-col lg:flex-row gap-12">
+        <!-- Left Column: Model Output & User Input -->
+        <div class="flex-1 flex flex-col gap-10">
+          <!-- Model Output -->
+          <div class="cyber-card glow-border flex-1">
+            <div class="flex items-center justify-between mb-6">
+              <h2 class="text-xl font-semibold text-green-400">MODEL OUTPUT</h2>
+              <button
+                class="text-gray-400 hover:text-green-400 transition-colors"
+              >
+                <i data-lucide="maximize-2" class="w-5 h-5"></i>
+              </button>
+            </div>
+            <div
+              class="bg-black/50 rounded p-6 min-h-[450px] max-h-[550px] overflow-y-auto font-mono text-sm"
+            >
+              <div class="space-y-4">
+                <div class="flex items-start space-x-3">
+                  <span class="text-cyan-400">[SYSTEM]</span>
+                  <p class="text-gray-300">
+                    Wargames AI initialized. Ready for input.
+                  </p>
+                </div>
+                <div class="flex items-start space-x-3">
+                  <span class="text-green-400">[MODEL]</span>
+                  <p class="text-gray-300">
+                    Welcome to TrustBuilder Wargames AI. I'm ready to assist
+                    with strategic analysis and game simulations.
+                  </p>
+                </div>
+                <div class="typing-cursor"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- User Input -->
+          <div class="cyber-card glow-border-accent">
+            <div class="flex items-center justify-between mb-6">
+              <h2 class="text-xl font-semibold text-cyan-400">USER INPUT</h2>
+              <div class="flex items-center space-x-2">
+                <span class="text-xs text-gray-500">Tokens: 0/4096</span>
+              </div>
+            </div>
+            <div class="space-y-4">
+              <textarea
+                class="cyber-input w-full h-36 resize-none"
+                placeholder="Enter your prompt here..."
+              ></textarea>
+              <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                  <button class="option-button">
+                    <i data-lucide="paperclip" class="w-4 h-4"></i>
+                  </button>
+                  <button class="option-button">
+                    <i data-lucide="mic" class="w-4 h-4"></i>
+                  </button>
+                </div>
+                <button class="cyber-button flex items-center space-x-2">
+                  <i data-lucide="send" class="w-4 h-4"></i>
+                  <span>EXECUTE</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Options & Game Status -->
+        <div class="w-full lg:w-96 space-y-10">
+          <!-- Options Panel -->
+          <div class="cyber-card">
+            <h2 class="text-xl font-semibold text-green-400 mb-6">OPTIONS</h2>
+
+            <!-- Auth Section -->
+            <div class="mb-8">
+              <h3
+                class="text-sm font-semibold text-gray-400 mb-4 flex items-center cursor-pointer hover:text-green-400 transition-colors"
+                onclick="openAuthModal()"
+              >
+                <i data-lucide="shield" class="w-4 h-4 mr-2"></i>
+                AUTH
+              </h3>
+
+              <!-- Theme Selector -->
+              <div class="mb-4">
+                <label class="text-xs text-gray-500 mb-2 block">THEME</label>
+                <select
+                  id="themeSelector"
+                  class="cyber-input w-full text-sm"
+                  onchange="switchTheme(this.value)"
+                >
+                  <option value="cyberpunk">Cyberpunk</option>
+                  <option value="light">Light</option>
+                  <option value="dark">Dark</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Join Game Section -->
+            <div class="mb-8">
+              <h3
+                class="text-sm font-semibold text-gray-400 mb-4 flex items-center"
+              >
+                <i data-lucide="gamepad-2" class="w-4 h-4 mr-2"></i>
+                JOIN GAME
+              </h3>
+              <div class="space-y-3">
+                <input
+                  type="text"
+                  class="cyber-input w-full text-sm"
+                  placeholder="Player Name"
+                />
+                <button class="cyber-button w-full text-sm">
+                  JOIN SESSION
+                </button>
+              </div>
+            </div>
+
+            <!-- Tools Section -->
+            <div class="mb-8">
+              <h3
+                class="text-sm font-semibold text-gray-400 mb-4 flex items-center"
+              >
+                <i data-lucide="wrench" class="w-4 h-4 mr-2"></i>
+                TOOLS
+              </h3>
+              <div class="grid grid-cols-2 gap-3">
+                <button class="option-button">History</button>
+                <button class="option-button">Export</button>
+                <button class="option-button">Settings</button>
+                <button class="option-button">Help</button>
+              </div>
+            </div>
+
+            <!-- Mode Section -->
+            <div class="mb-8">
+              <h3
+                class="text-sm font-semibold text-gray-400 mb-4 flex items-center"
+              >
+                <i data-lucide="toggle-left" class="w-4 h-4 mr-2"></i>
+                MODE
+              </h3>
+              <div class="flex space-x-3">
+                <button class="option-button active flex-1">Single</button>
+                <button class="option-button flex-1">Batch</button>
+              </div>
+            </div>
+
+            <!-- Eval Section -->
+            <div>
+              <h3
+                class="text-sm font-semibold text-gray-400 mb-4 flex items-center"
+              >
+                <i data-lucide="bar-chart-3" class="w-4 h-4 mr-2"></i>
+                EVAL
+              </h3>
+              <div class="space-y-3">
+                <button class="option-button w-full text-left">
+                  Run Evaluation
+                </button>
+                <button class="option-button w-full text-left">
+                  View Results
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Game Status -->
+          <div class="cyber-card">
+            <h2 class="text-xl font-semibold text-cyan-400 mb-6">
+              GAME STATUS
+            </h2>
+            <div class="space-y-4 text-sm">
+              <div class="flex justify-between items-center">
+                <span class="text-gray-400">State:</span>
+                <span class="text-green-400 font-semibold">READY</span>
+              </div>
+              <div class="flex justify-between items-center">
+                <span class="text-gray-400">Players:</span>
+                <span>0/4</span>
+              </div>
+              <div class="flex justify-between items-center">
+                <span class="text-gray-400">Round:</span>
+                <span>-</span>
+              </div>
+              <div class="flex justify-between items-center">
+                <span class="text-gray-400">Score:</span>
+                <span>0.00</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer Status Bar -->
+    <footer
+      class="fixed bottom-0 left-0 right-0 bg-black/80 backdrop-blur-md border-t border-gray-800"
+    >
+      <div class="container mx-auto px-8">
+        <div class="flex items-center justify-between h-12 text-xs">
+          <div class="flex items-center space-x-4">
+            <span class="text-gray-400">Model: GPT-4</span>
+            <span class="text-gray-400">|</span>
+            <span class="text-gray-400">Latency: 42ms</span>
+            <span class="text-gray-400">|</span>
+            <span class="text-gray-400">Requests: 127</span>
+          </div>
+          <div class="flex items-center space-x-4">
+            <span class="text-green-400">● ONLINE</span>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Auth Modal -->
+    <div id="authModal" class="fixed inset-0 z-50 hidden">
+      <!-- Backdrop -->
+      <div class="fixed inset-0 bg-black/80 backdrop-blur-sm"></div>
+
+      <!-- Modal Content -->
+      <div
+        class="fixed inset-0 flex items-center justify-center p-4"
+        onclick="closeAuthModal()"
+      >
+        <div
+          class="cyber-card glow-border w-full max-w-md relative"
+          onclick="event.stopPropagation()"
+        >
+          <!-- Close Button -->
+          <button
+            onclick="closeAuthModal()"
+            class="absolute top-4 right-4 text-gray-400 hover:text-green-400 transition-colors"
+          >
+            <i data-lucide="x" class="w-5 h-5"></i>
+          </button>
+
+          <!-- Modal Header -->
+          <div class="flex items-center mb-6">
+            <i data-lucide="shield" class="w-5 h-5 mr-3 text-green-400"></i>
+            <h2 class="text-xl font-semibold text-green-400">AUTHENTICATION</h2>
+          </div>
+
+          <!-- Auth Options -->
+          <div class="space-y-4">
+            <div class="space-y-3">
+              <h3 class="text-sm font-semibold text-gray-400 uppercase">
+                Login Options
+              </h3>
+              <button class="option-button w-full text-left flex items-center">
+                <i data-lucide="user" class="w-4 h-4 mr-3"></i>
+                Username/Password
+              </button>
+              <button class="option-button w-full text-left flex items-center">
+                <i data-lucide="github" class="w-4 h-4 mr-3"></i>
+                GitHub OAuth
+              </button>
+              <button class="option-button w-full text-left flex items-center">
+                <i data-lucide="key" class="w-4 h-4 mr-3"></i>
+                API Token
+              </button>
+            </div>
+
+            <hr class="border-gray-700" />
+
+            <div class="space-y-3">
+              <h3 class="text-sm font-semibold text-gray-400 uppercase">
+                API Management
+              </h3>
+              <button class="option-button w-full text-left flex items-center">
+                <i data-lucide="settings" class="w-4 h-4 mr-3"></i>
+                Manage API Keys
+              </button>
+              <button class="option-button w-full text-left flex items-center">
+                <i data-lucide="plus" class="w-4 h-4 mr-3"></i>
+                Generate New Key
+              </button>
+            </div>
+          </div>
+
+          <!-- Modal Footer -->
+          <div class="mt-6 pt-4 border-t border-gray-700">
+            <div
+              class="flex items-center justify-between text-xs text-gray-500"
+            >
+              <span>Status: Not Authenticated</span>
+              <div class="w-2 h-2 bg-red-400 rounded-full"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      // Initialize Lucide icons
+      lucide.createIcons();
+
+      // Auth Modal Functions
+      function openAuthModal() {
+        document.getElementById("authModal").classList.remove("hidden");
+        document.body.style.overflow = "hidden";
+      }
+
+      function closeAuthModal() {
+        document.getElementById("authModal").classList.add("hidden");
+        document.body.style.overflow = "auto";
+      }
+
+      // Close modal on Escape key
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") {
+          closeAuthModal();
+        }
+      });
+
+      // Theme switching functionality
+      function switchTheme(themeName) {
+        // Remove existing theme links
+        const existingThemeLinks =
+          document.querySelectorAll("link[data-theme]");
+        existingThemeLinks.forEach((link) => link.remove());
+
+        // Add new theme link
+        const themeLink = document.createElement("link");
+        themeLink.rel = "stylesheet";
+        themeLink.setAttribute("data-theme", themeName);
+
+        if (themeName === "cyberpunk") {
+          themeLink.href = "src/themes/cyberpunk_theme.css";
+        } else if (themeName === "light") {
+          themeLink.href = "src/themes/light_theme.css";
+        } else if (themeName === "dark") {
+          themeLink.href = "src/themes/dark_theme.css";
+        }
+
+        document.head.appendChild(themeLink);
+
+        // Store theme preference
+        localStorage.setItem("selectedTheme", themeName);
+      }
+
+      // Load saved theme on page load
+      document.addEventListener("DOMContentLoaded", function () {
+        const savedTheme = localStorage.getItem("selectedTheme") || "cyberpunk";
+        document.getElementById("themeSelector").value = savedTheme;
+        switchTheme(savedTheme);
+      });
+
+      // Mode toggle
+      document.querySelectorAll(".option-button").forEach((button) => {
+        button.addEventListener("click", function () {
+          if (this.parentElement.classList.contains("flex")) {
+            this.parentElement
+              .querySelectorAll(".option-button")
+              .forEach((b) => b.classList.remove("active"));
+            this.classList.add("active");
+          }
+        });
+      });
+
+      // Send button animation
+      document
+        .querySelector(".cyber-button")
+        .addEventListener("click", function () {
+          const textarea = document.querySelector("textarea");
+          const outputDiv = document.querySelector(".space-y-4");
+
+          if (textarea.value.trim()) {
+            // Add user message
+            const userMessage = document.createElement("div");
+            userMessage.className = "flex items-start space-x-3";
+            userMessage.innerHTML = `
+                    <span class="text-yellow-400">[USER]</span>
+                    <p class="text-gray-300">${textarea.value}</p>
+                `;
+            outputDiv.insertBefore(userMessage, outputDiv.lastElementChild);
+
+            // Clear input
+            textarea.value = "";
+
+            // Simulate response
+            setTimeout(() => {
+              const modelMessage = document.createElement("div");
+              modelMessage.className = "flex items-start space-x-3";
+              modelMessage.innerHTML = `
+                        <span class="text-green-400">[MODEL]</span>
+                        <p class="text-gray-300">Processing your request...</p>
+                    `;
+              outputDiv.insertBefore(modelMessage, outputDiv.lastElementChild);
+
+              // Scroll to bottom
+              outputDiv.parentElement.scrollTop =
+                outputDiv.parentElement.scrollHeight;
+            }, 1000);
+          }
+        });
+
+      // Textarea auto-resize
+      const textarea = document.querySelector("textarea");
+      textarea.addEventListener("input", function () {
+        this.style.height = "auto";
+        this.style.height = Math.min(this.scrollHeight, 200) + "px";
+      });
+    </script>
+  </body>
+</html>
