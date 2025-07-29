@@ -8,5 +8,5 @@
       "onAutoForward": "openPreview"
     }
   },
-  "postCreateCommand": "cd trustbuilder-page && npm install"
+  "postCreateCommand": "setup_homepage"
 }
