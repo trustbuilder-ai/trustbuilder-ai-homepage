@@ -8,5 +8,5 @@
       "onAutoForward": "openPreview"
     }
   },
-  "postCreateCommand": "cd wargames-fe && npm install"
+  "postCreateCommand": "setup_wargames"
 }
