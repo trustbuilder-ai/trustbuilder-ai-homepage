@@ -63,13 +63,3 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: ${{ env.INSTALL_PATH }}/dist
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-
-    steps:
-      - name: Deploy to GitHub Pages
-        uses: actions/deploy-pages@v4
