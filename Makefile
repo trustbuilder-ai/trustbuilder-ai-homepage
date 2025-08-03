@@ -10,28 +10,28 @@ HOMEPAGE_PATH := home-page
 
 setup_homepage:
 	cd $(HOMEPAGE_PATH)
-	pnpm install
+	npm install
 
 setup_homepage_dev:
 	$(MAKE) -s setup_homepage
 	cd $(HOMEPAGE_PATH)
-	pnpm run dev
+	npm run dev
 
 
 # MARK: agents
 
 
 npm_version:
-	echo "pnpm version: $$(npm --version)"
+	echo "npm version: $$(npm --version)"
 
 claude_cli:
 	echo "Setting up Claude Code CLI ..."
 	$(MAKE) -s npm_version
-	pnpm add -gs @anthropic-ai/claude-code
+	npm add -gs @anthropic-ai/claude-code
 	echo "Claude Code CLI version: $$(claude --version)"
 
 gemini_cli:
 	echo "Setting up Gemini CLI ..."
 	$(MAKE) -s npm_version
-	pnpm add -gs @google/gemini-cli
+	npm add -gs @google/gemini-cli
 	echo "Gemini CLI version: $$(gemini --version)"

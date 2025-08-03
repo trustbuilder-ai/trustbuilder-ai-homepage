@@ -1,7 +1,7 @@
 export class ThemeSwitcher {
   private currentTheme: "gummyloop" | "cyberphnk" = "gummyloop";
-  private gummyloopLink: HTMLLinkElement;
-  private cyberphnkLink: HTMLLinkElement;
+  private gummyloopLink!: HTMLLinkElement;
+  private cyberphnkLink!: HTMLLinkElement;
 
   constructor() {
     this.initializeThemeLinks();
