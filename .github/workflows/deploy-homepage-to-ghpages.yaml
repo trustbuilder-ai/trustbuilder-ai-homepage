@@ -7,9 +7,9 @@ on:
   workflow_dispatch:
     inputs:
       install_path:
-        description: 'Path to install dependencies and build (optional)'
-        type: string
+        description: 'Path to install dependencies and build'
         required: false
+        type: string
         default: 'home-page'
 
 permissions:
@@ -24,49 +24,53 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ${{ github.event.inputs.install_path || '.' }}
+    env:
+      INSTALL_PATH: |
+        ${{ github.event.inputs.install_path || '.' }}
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: Debug: List root files and folders
+        run: ls -la
+
+      - name: Debug: List install path files
+        run: ls -la ${{ env.INSTALL_PATH }}
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'pnpm'
-
-      - name: Install pnpm
-        uses: pnpm/action-setup@v2
-        with:
-          version: 8
+          cache: 'npm'
+          cache-dependency-path: |
+            ${{ env.INSTALL_PATH }}/package-lock.json
 
       - name: Install dependencies
-        run: pnpm install
+        run: npm ci
+        working-directory: ${{ env.INSTALL_PATH }}
 
       - name: Lint and format check
         run: |
-          pnpm run lint
-          pnpm run format -- --check
+          npm run lint
+          npm run format -- --check
+        working-directory: ${{ env.INSTALL_PATH }}
 
       - name: Build project
-        run: pnpm run build
+        run: npm run build
+        working-directory: ${{ env.INSTALL_PATH }}
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: dist
+          path: ${{ env.INSTALL_PATH }}/dist
 
   deploy:
     needs: build
     runs-on: ubuntu-latest
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
       - name: Deploy to GitHub Pages
-        id: deployment
         uses: actions/deploy-pages@v4
