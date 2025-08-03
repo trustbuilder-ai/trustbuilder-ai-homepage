@@ -12,12 +12,12 @@ export class ThemeSwitcher {
     // Create link elements for both themes
     this.gummyloopLink = document.createElement("link");
     this.gummyloopLink.rel = "stylesheet";
-    this.gummyloopLink.href = "/src/themes/gummyloop.css";
+    this.gummyloopLink.href = import.meta.env.BASE_URL + 'themes/gummyloop.css';
     this.gummyloopLink.id = "gummyloop-theme";
 
     this.cyberphnkLink = document.createElement("link");
     this.cyberphnkLink.rel = "stylesheet";
-    this.cyberphnkLink.href = "/src/themes/cyberphnk.css";
+    this.cyberphnkLink.href = import.meta.env.BASE_URL + 'themes/cyberphnk.css';
     this.cyberphnkLink.id = "cyberphnk-theme";
 
     // Add both to head but disable cyberphnk initially
