@@ -24,9 +24,9 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ${{ github.event.inputs.install_path || '.' }}
+    env:
+      INSTALL_PATH: |
+        ${{ github.event.inputs.install_path || 'frontend' }}
 
     steps:
       - name: Checkout code
@@ -37,17 +37,22 @@ jobs:
         with:
           node-version: 20
           cache: 'npm'
+          cache-dependency-path: |
+            ${{ env.INSTALL_PATH }}/package-lock.json
 
       - name: Install dependencies
         run: npm ci
+        working-directory: ${{ env.INSTALL_PATH }}
 
       - name: Lint and format check
         run: |
           npm run lint
           npm run format -- --check
+        working-directory: ${{ env.INSTALL_PATH }}
 
       - name: Build project
         run: npm run build
+        working-directory: ${{ env.INSTALL_PATH }}
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
