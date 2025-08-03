@@ -24,8 +24,6 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
-    env:
-      INSTALL_PATH: ${{ github.event.inputs.install_path || '.' }}
 
     steps:
       - name: Checkout code
@@ -36,23 +34,22 @@ jobs:
         with:
           node-version: 20
           cache: 'npm'
-        working-directory: ${{ env.INSTALL_PATH }}
 
       - name: Install dependencies
         run: npm ci
-        working-directory: ${{ env.INSTALL_PATH }}
+        working-directory: ${{ github.event.inputs.install_path }}
 
       - name: Lint and format check
         run: |
           npm run lint
           npm run format -- --check
-        working-directory: ${{ env.INSTALL_PATH }}
+        working-directory: ${{ github.event.inputs.install_path }}
 
       - name: Build project
         run: npm run build
-        working-directory: ${{ env.INSTALL_PATH }}
+        working-directory: ${{ github.event.inputs.install_path }}
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ${{ env.INSTALL_PATH }}/dist
+          path: ${{ github.event.inputs.install_path }}/dist
