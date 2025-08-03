@@ -19,10 +19,9 @@ jobs:
         with:
           node-version: 18
 
-      - name: Change to home-page and install dependencies
-        run: |
-          cd home-page
-          npm ci
+      - name: Install dependencies
+        run: npm install
+        working-directory: home-page
 
       - name: Build home-page
         run: npm run build
