@@ -11,21 +11,21 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
+      - name: Checkout repository
         uses: actions/checkout@v4
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '18'
+          node-version: 18
 
-      - name: Install dependencies
-        working-directory: home-page
+      - name: Change to home-page and install dependencies
         run: npm ci
+        working-directory: home-page
 
       - name: Build home-page
-        working-directory: home-page
         run: npm run build
+        working-directory: home-page
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
