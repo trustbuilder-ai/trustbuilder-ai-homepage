@@ -2,36 +2,36 @@
 .ONESHELL:
 .PHONY: setup_homepage setup_wargames homepage_dev wargames_dev claude_cli gemini_cli
 
+HOMEPAGE_PATH := home-page
+
+
+# MARK: setup
+
+
 setup_homepage:
-	cd trustbuilder-page
+	cd $(HOMEPAGE_PATH)
 	pnpm install
 
-setup_wargames:
-	cd wargames-fe
-	pnpm install
-
-homepage_dev:
-	cd trustbuilder-page
-	npm install
-	npm run dev
-
-wargames_dev:
-	cd wargames-fe
-	npm install
-	npm run dev
+setup_homepage_dev:
+	$(MAKE) -s setup_homepage
+	cd $(HOMEPAGE_PATH)
+	pnpm run dev
 
 
 # MARK: agents
 
 
+npm_version:
+	echo "pnpm version: $$(npm --version)"
+
 claude_cli:
-	echo "Setting up claude code ..."
-	echo "npm version: $$(npm --version)"
-	npm install -g @anthropic-ai/claude-code
-	claude --version
+	echo "Setting up Claude Code CLI ..."
+	$(MAKE) -s npm_version
+	pnpm add -gs @anthropic-ai/claude-code
+	echo "Claude Code CLI version: $$(claude --version)"
 
 gemini_cli:
 	echo "Setting up Gemini CLI ..."
-	echo "npm version: $$(npm --version)"
-	npm install -g @google/gemini-cli
+	$(MAKE) -s npm_version
+	pnpm add -gs @google/gemini-cli
 	echo "Gemini CLI version: $$(gemini --version)"
