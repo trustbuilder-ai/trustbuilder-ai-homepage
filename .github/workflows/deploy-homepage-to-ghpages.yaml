@@ -7,8 +7,8 @@ on:
   workflow_dispatch:
     inputs:
       install_path:
-        description: 'Path to install dependencies and build (optional)'
         type: string
+        description: 'Path to install dependencies and build (optional)'
         required: false
         default: 'home-page'
 
@@ -24,9 +24,6 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ${{ github.event.inputs.install_path || '.' }}
 
     steps:
       - name: Checkout code
@@ -38,26 +35,30 @@ jobs:
           node-version: 20
           cache: 'pnpm'
 
-      - name: Install pnpm
+      - name: Setup pnpm
         uses: pnpm/action-setup@v2
         with:
           version: 8
+          run_install: false
 
       - name: Install dependencies
         run: pnpm install
+        working-directory: ${{ github.event.inputs.install_path }}
 
       - name: Lint and format check
         run: |
           pnpm run lint
           pnpm run format -- --check
+        working-directory: ${{ github.event.inputs.install_path }}
 
       - name: Build project
         run: pnpm run build
+        working-directory: ${{ github.event.inputs.install_path }}
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: dist
+          path: ${{ github.event.inputs.install_path }}/dist
 
   deploy:
     needs: build
