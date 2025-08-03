@@ -10,7 +10,7 @@ on:
         description: 'Path to install dependencies and build (optional)'
         type: string
         required: false
-        default: '.'
+        default: 'home-page'
 
 permissions:
   contents: read
