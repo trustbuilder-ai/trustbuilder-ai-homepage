@@ -1,4 +1,4 @@
-name: Deploy Vite TypeScript Starter
+name: Deploy Homepage to GitHub Pages
 
 on:
   workflow_dispatch:
