@@ -24,6 +24,8 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      INSTALL_PATH: ${{ github.event.inputs.install_path || '.' }}
 
     steps:
       - name: Checkout code
@@ -33,41 +35,23 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'pnpm'
-
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v2
-        with:
-          version: 8
-          run_install: false
+          cache: 'npm'
 
       - name: Install dependencies
-        run: pnpm install
-        working-directory: ${{ github.event.inputs.install_path }}
+        run: npm ci
+        working-directory: ${{ env.INSTALL_PATH }}
 
       - name: Lint and format check
         run: |
-          pnpm run lint
-          pnpm run format -- --check
-        working-directory: ${{ github.event.inputs.install_path }}
+          npm run lint
+          npm run format -- --check
+        working-directory: ${{ env.INSTALL_PATH }}
 
       - name: Build project
-        run: pnpm run build
-        working-directory: ${{ github.event.inputs.install_path }}
+        run: npm run build
+        working-directory: ${{ env.INSTALL_PATH }}
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ${{ github.event.inputs.install_path }}/dist
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+          path: ${{ env.INSTALL_PATH }}/dist
