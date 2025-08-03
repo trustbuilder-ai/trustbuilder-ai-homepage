@@ -3,13 +3,13 @@ name: Build and Deploy home-page
 on:
   push:
     branches:
-      - main  # change this to your deploy branch
+      - main
+    workflow_dispatch:
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    outputs:
-      build_dir: home-page/build  # output folder, adjust if different (e.g., dist)
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -20,20 +20,32 @@ jobs:
           node-version: '16'
 
       - name: Install dependencies
-        working-directory: ./home-page
+        working-directory: home-page
         run: npm ci
 
       - name: Build home-page
-        working-directory: ./home-page
+        working-directory: home-page
         run: npm run build
+
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: home-page-build
+          path: home-page/dist
 
   deploy:
     needs: build
     runs-on: ubuntu-latest
+
     steps:
+      - name: Download build artifacts
+        uses: actions/download-artifact@v3
+        with:
+          name: home-page-build
+          path: build
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
+          publish_dir: ./build
