@@ -1,0 +1,39 @@
+name: Build and Deploy home-page
+
+on:
+  push:
+    branches:
+      - main  # change this to your deploy branch
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    outputs:
+      build_dir: home-page/build  # output folder, adjust if different (e.g., dist)
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+
+      - name: Install dependencies
+        working-directory: ./home-page
+        run: npm ci
+
+      - name: Build home-page
+        working-directory: ./home-page
+        run: npm run build
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
