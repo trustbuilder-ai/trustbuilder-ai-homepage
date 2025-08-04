@@ -1,5 +1,5 @@
 {
-  "name": "ts-node",
+  "name": "Setup Homepage Dev",
   "image": "mcr.microsoft.com/devcontainers/typescript-node:20",
   "forwardPorts": [5173],
   "portsAttributes": {
@@ -8,5 +8,5 @@
       "onAutoForward": "openPreview"
     }
   },
-  "postCreateCommand": "setup_wargames"
+  "postCreateCommand": "setup_homepage_dev"
 }
