@@ -22,7 +22,7 @@ document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
           <a href="#about">About</a>
           <a href="#contact">Contact</a>
           <div id="theme-picker-container"></div>
-          <a href="https://trustbuilder-ai.github.io/trustbuilder-ai-platform/" target="_blank" class="cta-button">Get Started</a>
+          <a href="https://trustbuilder-ai.github.io/trustbuilder-ai-platform/" target="_blank" class="cta-button">Join Platform</a>
         </div>
         
         <!-- Mobile Menu Button -->
@@ -41,7 +41,7 @@ document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
             <a href="#about">About</a>
             <a href="#contact">Contact</a>
             <div id="mobile-theme-picker-container"></div>
-            <a href="https://trustbuilder-ai.github.io/trustbuilder-ai-platform/" target="_blank" class="cta-button mobile-cta">Get Started</a>
+            <a href="https://trustbuilder-ai.github.io/trustbuilder-ai-platform/" target="_blank" class="cta-button mobile-cta">Join Platform</a>
           </div>
         </div>
       </div>
@@ -52,31 +52,31 @@ document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
       <div class="hero-container">
         <div class="hero-content">
           <h1 class="hero-title">
-            Advanced AI Security
-            <span class="gradient-text">War Gaming</span>
+            Turning Adversity into
+            <span class="gradient-text">Assurance</span>
           </h1>
           <p class="hero-subtitle">
-            Revolutionizing cybersecurity through intelligent adversarial simulation and automated threat modeling
+            The crowdsourced security platform that validates AI safety through competitive wargames, connecting evaluators and providers to build more secure AI systems
           </p>
           <div class="hero-buttons">
-            <a href="https://trustbuilder-ai.github.io/trustbuilder-ai-platform/" target="_blank" class="primary-button">Start Free Trial</a>
-            <button class="secondary-button">Watch Demo</button>
+            <a href="https://trustbuilder-ai.github.io/trustbuilder-ai-platform/" target="_blank" class="primary-button">Join the Platform</a>
+            <a href="https://trustbuilder-ai.github.io/trustbuilder-ai-platform/" target="_blank" class="secondary-button">View Challenges</a>
           </div>
         </div>
         <div class="hero-visual">
           <div class="floating-card">
             <div class="card-header">
               <div class="status-indicator active"></div>
-              <span>AI Security Engine</span>
+              <span>TrustBuilder AI Platform</span>
             </div>
             <div class="metrics">
               <div class="metric">
-                <span class="metric-value">99.7%</span>
-                <span class="metric-label">Threat Detection</span>
+                <span class="metric-value">5+</span>
+                <span class="metric-label">LLM Providers</span>
               </div>
               <div class="metric">
-                <span class="metric-value">< 1ms</span>
-                <span class="metric-label">Response Time</span>
+                <span class="metric-value">Live</span>
+                <span class="metric-label">Tournaments</span>
               </div>
             </div>
           </div>
@@ -87,27 +87,27 @@ document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
     <!-- Features Section -->
     <section id="features" class="features">
       <div class="container">
-        <h2 class="section-title">Core Capabilities</h2>
+        <h2 class="section-title">Value for Everyone</h2>
         <div class="features-grid">
           <div class="feature-card">
-            <div class="feature-icon">🎯</div>
-            <h3>Adversarial AI Simulation</h3>
-            <p>Advanced AI agents simulate sophisticated attack scenarios to identify vulnerabilities before they're exploited</p>
+            <div class="feature-icon">🎮</div>
+            <h3>For Security Researchers</h3>
+            <p>Join competitive tournaments, earn recognition, and advance AI safety while getting rewarded for finding vulnerabilities</p>
           </div>
           <div class="feature-card">
-            <div class="feature-icon">🛡️</div>
-            <h3>Automated Threat Modeling</h3>
-            <p>Intelligent analysis of system architectures to automatically generate comprehensive threat models</p>
+            <div class="feature-icon">🏆</div>
+            <h3>Gamified Challenges</h3>
+            <p>Time-gated tournaments with leaderboards that make AI security testing engaging and rewarding</p>
           </div>
           <div class="feature-card">
-            <div class="feature-icon">⚡</div>
-            <h3>Real-time Defense</h3>
-            <p>Continuous monitoring and instant response to emerging threats with AI-powered countermeasures</p>
+            <div class="feature-icon">🔒</div>
+            <h3>For AI Providers</h3>
+            <p>Validate your models' safety through crowdsourced testing from a global community of security experts</p>
           </div>
           <div class="feature-card">
-            <div class="feature-icon">📊</div>
-            <h3>Strategic Intelligence</h3>
-            <p>Deep insights into attack patterns and security posture with actionable recommendations</p>
+            <div class="feature-icon">🌐</div>
+            <h3>Multi-LLM Support</h3>
+            <p>Test across 5+ major LLM providers including OpenAI, Anthropic, GitHub, and Hugging Face models</p>
           </div>
         </div>
       </div>
@@ -118,21 +118,28 @@ document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
       <div class="container">
         <div class="split-content">
           <div class="content-block">
-            <h2>The Challenge</h2>
-            <p>Traditional cybersecurity approaches are reactive, leaving organizations vulnerable to sophisticated attacks. Current tools lack the intelligence to anticipate and simulate advanced persistent threats.</p>
+            <h2>Pain Points We Solve</h2>
+            <p><strong>For Evaluators:</strong> Limited opportunities to showcase security skills, isolated testing environments, and lack of recognition for finding AI vulnerabilities.</p>
             <ul class="challenge-list">
-              <li>Manual threat modeling is time-intensive and error-prone</li>
-              <li>Static security assessments miss dynamic attack vectors</li>
-              <li>Limited visibility into emerging threat landscapes</li>
+              <li>Few platforms reward AI security research</li>
+              <li>Limited access to diverse AI models for testing</li>
+              <li>No competitive environment for skill development</li>
+            </ul>
+            <p><strong>For AI Providers:</strong> Difficulty validating model safety, expensive internal security teams, and limited external testing perspectives.</p>
+            <ul class="challenge-list">
+              <li>High costs of comprehensive security testing</li>
+              <li>Internal blind spots in vulnerability assessment</li>
+              <li>Lack of diverse attack methodologies</li>
             </ul>
           </div>
           <div class="content-block">
             <h2>Our Solution</h2>
-            <p>WarGames AI transforms cybersecurity through intelligent adversarial simulation, providing proactive defense mechanisms that evolve with the threat landscape.</p>
+            <p>TrustBuilder AI creates a win-win ecosystem where security researchers compete to find vulnerabilities while AI providers get comprehensive, cost-effective safety validation.</p>
             <ul class="solution-list">
-              <li>AI-powered attack simulation and defense</li>
-              <li>Automated vulnerability discovery and remediation</li>
-              <li>Continuous learning from global threat intelligence</li>
+              <li>Crowdsourced security testing with global experts</li>
+              <li>Gamified tournaments that motivate thorough testing</li>
+              <li>Multi-provider platform supporting 5+ major LLM providers</li>
+              <li>Cost-effective alternative to large internal security teams</li>
             </ul>
           </div>
         </div>
@@ -142,23 +149,23 @@ document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
     <!-- Technology Stack -->
     <section class="tech-stack">
       <div class="container">
-        <h2 class="section-title">Powered by Advanced AI</h2>
+        <h2 class="section-title">Built on Modern Technology</h2>
         <div class="tech-grid">
           <div class="tech-item">
-            <h4>Machine Learning</h4>
-            <p>Deep neural networks for pattern recognition and threat prediction</p>
+            <h4>Multi-LLM Integration</h4>
+            <p>Support for OpenAI, Anthropic, GitHub, and Hugging Face models through unified API</p>
           </div>
           <div class="tech-item">
-            <h4>Natural Language Processing</h4>
-            <p>Intelligent analysis of security documentation and threat intelligence</p>
+            <h4>Tournament System</h4>
+            <p>Time-gated competitions with user enrollment, progress tracking, and leaderboards</p>
           </div>
           <div class="tech-item">
-            <h4>Reinforcement Learning</h4>
-            <p>Adaptive agents that learn optimal attack and defense strategies</p>
+            <h4>FastAPI Backend</h4>
+            <p>High-performance Python backend with automatic documentation and JWT authentication</p>
           </div>
           <div class="tech-item">
-            <h4>Graph Neural Networks</h4>
-            <p>Advanced modeling of complex system relationships and dependencies</p>
+            <h4>Modern Frontend</h4>
+            <p>TypeScript and Vite-powered interface with seamless user experience</p>
           </div>
         </div>
       </div>
@@ -168,11 +175,11 @@ document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
     <section class="cta-section">
       <div class="container">
         <div class="cta-content">
-          <h2>Ready to Transform Your Security?</h2>
-          <p>Join leading organizations using WarGames AI to stay ahead of cyber threats</p>
+          <h2>Ready to Join the AI Security Revolution?</h2>
+          <p>Whether you're a security researcher looking to showcase skills or an AI provider seeking validation, start your journey today</p>
           <div class="cta-buttons">
-            <a href="https://trustbuilder-ai.github.io/trustbuilder-ai-platform/" target="_blank" class="primary-button large">Start Free Trial</a>
-            <a href="https://trustbuilder-ai.github.io/trustbuilder-ai-platform/" target="_blank" class="secondary-button large">Schedule Demo</a>
+            <a href="https://trustbuilder-ai.github.io/trustbuilder-ai-platform/" target="_blank" class="primary-button large">Join the Platform</a>
+            <a href="https://trustbuilder-ai.github.io/trustbuilder-ai-platform/" target="_blank" class="secondary-button large">View Live Tournaments</a>
           </div>
         </div>
       </div>
