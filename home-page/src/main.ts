@@ -22,7 +22,7 @@ document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
           <a href="#about">About</a>
           <a href="#contact">Contact</a>
           <div id="theme-picker-container"></div>
-          <button class="cta-button">Get Started</button>
+          <a href="https://trustbuilder-ai.github.io/trustbuilder-ai-platform/" target="_blank" class="cta-button">Get Started</a>
         </div>
       </div>
     </nav>
@@ -39,7 +39,7 @@ document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
             Revolutionizing cybersecurity through intelligent adversarial simulation and automated threat modeling
           </p>
           <div class="hero-buttons">
-            <button class="primary-button">Start Free Trial</button>
+            <a href="https://trustbuilder-ai.github.io/trustbuilder-ai-platform/" target="_blank" class="primary-button">Start Free Trial</a>
             <button class="secondary-button">Watch Demo</button>
           </div>
         </div>
@@ -151,8 +151,8 @@ document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
           <h2>Ready to Transform Your Security?</h2>
           <p>Join leading organizations using WarGames AI to stay ahead of cyber threats</p>
           <div class="cta-buttons">
-            <button class="primary-button large">Start Free Trial</button>
-            <button class="secondary-button large">Schedule Demo</button>
+            <a href="https://trustbuilder-ai.github.io/trustbuilder-ai-platform/" target="_blank" class="primary-button large">Start Free Trial</a>
+            <a href="https://trustbuilder-ai.github.io/trustbuilder-ai-platform/" target="_blank" class="secondary-button large">Schedule Demo</a>
           </div>
         </div>
       </div>
