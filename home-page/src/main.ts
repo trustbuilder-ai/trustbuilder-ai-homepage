@@ -1,6 +1,3 @@
-import "./style.css";
-import "./layout.css";
-import "./theme-picker.css";
 import { ThemeSwitcher } from "./theme-switcher";
 import { createThemePicker } from "./theme-picker";
 
