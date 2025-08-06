@@ -171,6 +171,63 @@ document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
       </div>
     </section>
 
+    <!-- About Section -->
+    <section id="about" class="problem-solution">
+      <div class="container">
+        <div class="split-content">
+          <div class="content-block">
+            <h2>Our Mission</h2>
+            <p>TrustBuilder AI bridges the gap between AI innovation and security assurance. We believe that the best way to secure AI systems is through collaborative testing by a diverse community of security experts.</p>
+            <p>Founded on the principle that "adversity breeds assurance," we transform potential threats into opportunities for improvement through competitive, gamified security testing.</p>
+            <ul class="solution-list">
+              <li>Community-driven AI safety validation</li>
+              <li>Transparent and competitive testing environment</li>
+              <li>Bridging security researchers with AI providers</li>
+            </ul>
+          </div>
+          <div class="content-block">
+            <h2>Our Vision</h2>
+            <p>We envision a future where AI systems are inherently secure through continuous community validation. By making security testing engaging and rewarding, we create sustainable incentives for comprehensive AI safety.</p>
+            <p>Our platform supports the entire AI ecosystem - from researchers advancing their careers to providers ensuring their models meet the highest security standards.</p>
+            <ul class="solution-list">
+              <li>Global standard for AI security validation</li>
+              <li>Sustainable security research economy</li>
+              <li>Democratized access to AI safety testing</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="tech-stack">
+      <div class="container">
+        <h2 class="section-title">Get in Touch</h2>
+        <div class="tech-grid">
+          <div class="tech-item">
+            <h4>🚀 Join as Evaluator</h4>
+            <p>Ready to test AI models and compete in tournaments? Start your security research journey today.</p>
+          </div>
+          <div class="tech-item">
+            <h4>🔒 Partner as Provider</h4>
+            <p>Want to validate your AI models through crowdsourced testing? Let's discuss how we can help secure your AI.</p>
+          </div>
+          <div class="tech-item">
+            <h4>💡 Contribute to Platform</h4>
+            <p>Interested in contributing to the open-source platform? Check out our GitHub repositories and join the development.</p>
+          </div>
+          <div class="tech-item">
+            <h4>🤝 General Inquiries</h4>
+            <p>Have questions about TrustBuilder AI? Reach out through our platform or connect with us on GitHub.</p>
+          </div>
+        </div>
+        <div style="text-align: center; margin-top: 3rem;">
+          <a href="https://trustbuilder-ai.github.io/trustbuilder-ai-platform/" target="_blank" class="primary-button large" style="margin-right: 1rem;">Visit Platform</a>
+          <a href="https://github.com/trustbuilder-ai" target="_blank" class="secondary-button large">View on GitHub</a>
+        </div>
+      </div>
+    </section>
+
     <!-- CTA Section -->
     <section class="cta-section">
       <div class="container">
