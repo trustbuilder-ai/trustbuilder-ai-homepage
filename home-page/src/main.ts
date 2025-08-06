@@ -19,6 +19,8 @@ document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
           </div>
         </div>
         <div class="nav-links">
+          <a href="https://forms.gle/64Xgu9qhAPtf6NLdA" target="_blank" class="survey-button evaluator-survey">Evaluator Survey</a>
+          <a href="https://forms.gle/zYLnKi3TdyNBSw5U8" target="_blank" class="survey-button provider-survey">Provider Survey</a>
           <a href="#features">Features</a>
           <a href="#about">About</a>
           <a href="#contact">Contact</a>

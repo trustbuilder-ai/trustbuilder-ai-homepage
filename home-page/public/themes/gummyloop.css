@@ -199,4 +199,71 @@
 
   /* Animation Values */
   --hue-shift: 30deg;
+
+  /* Survey Button Colors */
+  --survey-button-bg: rgba(124, 58, 237, 0.2);
+  --survey-button-border: rgba(124, 58, 237, 0.6);
+  --survey-button-text: #ffffff;
+  --survey-button-bg-hover: rgba(124, 58, 237, 0.3);
+  --survey-button-border-hover: rgba(124, 58, 237, 0.8);
+  --survey-button-glow: 0 0 15px rgba(124, 58, 237, 0.4);
+  --survey-button-glow-hover: 0 0 20px rgba(124, 58, 237, 0.6);
+}
+
+/* Survey Button Styles */
+.survey-button {
+  padding: 8px 16px !important;
+  background: var(--survey-button-bg) !important;
+  border: 1px solid var(--survey-button-border) !important;
+  border-radius: var(--radius-md) !important;
+  color: var(--survey-button-text) !important;
+  text-decoration: none !important;
+  font-size: 0.9rem !important;
+  font-weight: 500 !important;
+  text-align: center !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  transition: all 0.3s ease !important;
+  box-shadow: var(--survey-button-glow) !important;
+  text-shadow: var(--text-shadow-subtle) !important;
+  backdrop-filter: var(--glass-blur) !important;
+  -webkit-backdrop-filter: var(--glass-blur) !important;
+}
+
+.survey-button:hover {
+  background: var(--survey-button-bg-hover) !important;
+  border-color: var(--survey-button-border-hover) !important;
+  box-shadow: var(--survey-button-glow-hover) !important;
+  transform: translateY(-2px) scale(1.05) !important;
+}
+
+.survey-button.evaluator-survey {
+  background: linear-gradient(135deg, rgba(124, 58, 237, 0.2), rgba(236, 72, 153, 0.2)) !important;
+  border: 1px solid rgba(124, 58, 237, 0.6) !important;
+  animation: glow-pulse-purple 2s infinite !important;
+}
+
+.survey-button.provider-survey {
+  background: linear-gradient(135deg, rgba(236, 72, 153, 0.2), rgba(6, 182, 212, 0.2)) !important;
+  border: 1px solid rgba(236, 72, 153, 0.6) !important;
+  animation: glow-pulse-pink 2s infinite 0.5s !important;
+}
+
+@keyframes glow-pulse-purple {
+  0%, 100% { 
+    box-shadow: 0 0 15px rgba(124, 58, 237, 0.4);
+  }
+  50% { 
+    box-shadow: 0 0 25px rgba(124, 58, 237, 0.7);
+  }
+}
+
+@keyframes glow-pulse-pink {
+  0%, 100% { 
+    box-shadow: 0 0 15px rgba(236, 72, 153, 0.4);
+  }
+  50% { 
+    box-shadow: 0 0 25px rgba(236, 72, 153, 0.7);
+  }
 }
