@@ -24,6 +24,26 @@ document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
           <div id="theme-picker-container"></div>
           <a href="https://trustbuilder-ai.github.io/trustbuilder-ai-platform/" target="_blank" class="cta-button">Get Started</a>
         </div>
+        
+        <!-- Mobile Menu Button -->
+        <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+        
+        <!-- Mobile Menu -->
+        <div class="mobile-menu">
+          <div class="mobile-menu-content">
+            <a href="https://forms.gle/64Xgu9qhAPtf6NLdA" target="_blank" class="survey-button evaluator-survey mobile-survey">Evaluator Survey</a>
+            <a href="https://forms.gle/zYLnKi3TdyNBSw5U8" target="_blank" class="survey-button provider-survey mobile-survey">Provider Survey</a>
+            <a href="#features">Features</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+            <div id="mobile-theme-picker-container"></div>
+            <a href="https://trustbuilder-ai.github.io/trustbuilder-ai-platform/" target="_blank" class="cta-button mobile-cta">Get Started</a>
+          </div>
+        </div>
       </div>
     </nav>
 
@@ -204,3 +224,96 @@ if (themePickerContainer) {
   const themePicker = createThemePicker(themeSwitcher);
   themePickerContainer.appendChild(themePicker);
 }
+
+// Add theme picker to mobile navigation
+const mobileThemePickerContainer = document.getElementById("mobile-theme-picker-container");
+if (mobileThemePickerContainer) {
+  const mobileThemePicker = createThemePicker(themeSwitcher);
+  mobileThemePickerContainer.appendChild(mobileThemePicker);
+}
+
+// Mobile menu functionality
+const mobileMenuToggle = document.querySelector('.mobile-menu-toggle') as HTMLButtonElement;
+const mobileMenu = document.querySelector('.mobile-menu') as HTMLDivElement;
+const mobileMenuLinks = document.querySelectorAll('.mobile-menu a');
+
+let isMenuOpen = false;
+
+function toggleMobileMenu() {
+  isMenuOpen = !isMenuOpen;
+  
+  if (isMenuOpen) {
+    mobileMenuToggle.classList.add('active');
+    mobileMenu.classList.add('active');
+    document.body.style.overflow = 'hidden'; // Prevent scrolling when menu is open
+  } else {
+    mobileMenuToggle.classList.remove('active');
+    mobileMenu.classList.remove('active');
+    document.body.style.overflow = ''; // Restore scrolling
+  }
+}
+
+function closeMobileMenu() {
+  if (isMenuOpen) {
+    isMenuOpen = false;
+    mobileMenuToggle.classList.remove('active');
+    mobileMenu.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+}
+
+// Toggle menu when hamburger button is clicked
+if (mobileMenuToggle) {
+  mobileMenuToggle.addEventListener('click', toggleMobileMenu);
+}
+
+// Close menu when a link is clicked
+mobileMenuLinks.forEach(link => {
+  link.addEventListener('click', () => {
+    // Small delay to allow navigation before closing menu
+    setTimeout(closeMobileMenu, 150);
+  });
+});
+
+// Close menu when clicking outside
+document.addEventListener('click', (event) => {
+  const target = event.target as HTMLElement;
+  if (isMenuOpen && 
+      !mobileMenu.contains(target) && 
+      !mobileMenuToggle.contains(target)) {
+    closeMobileMenu();
+  }
+});
+
+// Close menu on escape key
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape' && isMenuOpen) {
+    closeMobileMenu();
+  }
+});
+
+// Handle window resize
+window.addEventListener('resize', () => {
+  // Close mobile menu if window is resized to desktop size
+  if (window.innerWidth > 768 && isMenuOpen) {
+    closeMobileMenu();
+  }
+});
+
+// Smooth scrolling for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    const targetElement = e.target as HTMLAnchorElement;
+    const href = targetElement.getAttribute('href');
+    if (href) {
+      const target = document.querySelector(href);
+      if (target) {
+        target.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+    }
+  });
+});

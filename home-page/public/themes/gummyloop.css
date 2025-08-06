@@ -267,3 +267,31 @@
     box-shadow: 0 0 25px rgba(236, 72, 153, 0.7);
   }
 }
+
+/* Mobile Survey Button Styles */
+@media (max-width: 768px) {
+  .mobile-survey {
+    width: 100% !important;
+    max-width: 280px !important;
+    padding: 1rem 1.5rem !important;
+    margin-bottom: 0.5rem !important;
+    font-size: 1rem !important;
+  }
+  
+  .survey-button {
+    font-size: 0.85rem !important;
+    padding: 6px 12px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .mobile-survey {
+    padding: 0.875rem 1.25rem !important;
+    font-size: 0.95rem !important;
+  }
+  
+  .survey-button {
+    font-size: 0.8rem !important;
+    padding: 5px 10px !important;
+  }
+}
