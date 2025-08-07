@@ -3,12 +3,12 @@
 :root {
   /* Fonts */
   --font-primary:
-    "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --font-heading: "Inter", sans-serif;
-  --font-body: "Inter", sans-serif;
-  --font-ui: "Inter", sans-serif;
-  --font-brand: "Inter", sans-serif;
-  --font-mono: "SF Mono", "Monaco", "Inconsolata", "Roboto Mono", monospace;
+    "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-heading: "Outfit", "Plus Jakarta Sans", sans-serif;
+  --font-body: "Inter", "DM Sans", sans-serif;
+  --font-ui: "Inter", "DM Sans", sans-serif;
+  --font-brand: "Plus Jakarta Sans", "Outfit", sans-serif;
+  --font-mono: "JetBrains Mono", "SF Mono", "Monaco", monospace;
 
   /* Colors */
   --primary-color: #7c3aed;
@@ -266,6 +266,61 @@
   50% { 
     box-shadow: 0 0 25px rgba(236, 72, 153, 0.7);
   }
+}
+
+/* Gummyloop-specific playful styling */
+.hero-title,
+.section-title {
+  letter-spacing: -0.02em !important;
+}
+
+.feature-card h3,
+.content-block h2,
+.tech-item h4 {
+  letter-spacing: -0.01em !important;
+}
+
+/* Add bouncy animation to feature cards */
+.feature-card {
+  transform-origin: center bottom !important;
+}
+
+.feature-card:hover {
+  animation: gummy-bounce 0.6s ease-out !important;
+}
+
+@keyframes gummy-bounce {
+  0% { transform: translateY(-10px) scale(1.02); }
+  30% { transform: translateY(-15px) scale(1.03); }
+  60% { transform: translateY(-8px) scale(1.025); }
+  100% { transform: translateY(-10px) scale(1.02); }
+}
+
+/* Playful button hover effects */
+.primary-button:hover,
+.secondary-button:hover,
+.cta-button:hover {
+  animation: gummy-wiggle 0.4s ease-in-out !important;
+}
+
+@keyframes gummy-wiggle {
+  0%, 100% { transform: translateY(-2px) rotate(0deg); }
+  25% { transform: translateY(-3px) rotate(0.5deg); }
+  75% { transform: translateY(-3px) rotate(-0.5deg); }
+}
+
+/* Rounded corners for gummy feel */
+.feature-card,
+.content-block,
+.tech-item,
+.floating-card {
+  border-radius: calc(var(--radius-xxl) + 4px) !important;
+}
+
+.primary-button,
+.secondary-button,
+.cta-button {
+  border-radius: calc(var(--radius-xl) + 2px) !important;
 }
 
 /* Mobile Survey Button Styles */

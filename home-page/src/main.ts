@@ -221,8 +221,8 @@ document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
             <p>Have questions about TrustBuilder AI? Reach out through our platform or connect with us on GitHub.</p>
           </div>
         </div>
-        <div style="text-align: center; margin-top: 3rem;">
-          <a href="https://trustbuilder-ai.github.io/trustbuilder-ai-platform/" target="_blank" class="primary-button large" style="margin-right: 1rem;">Visit Platform</a>
+        <div class="cta-buttons" style="margin-top: 3rem;">
+          <a href="https://trustbuilder-ai.github.io/trustbuilder-ai-platform/" target="_blank" class="primary-button large">Visit Platform</a>
           <a href="https://github.com/trustbuilder-ai" target="_blank" class="secondary-button large">View on GitHub</a>
         </div>
       </div>

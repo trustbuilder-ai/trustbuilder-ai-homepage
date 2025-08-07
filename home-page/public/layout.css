@@ -248,7 +248,7 @@ body {
 }
 
 .hero-subtitle {
-  font-size: 1.25rem;
+  font-size: 1.35rem;
   color: var(--text-secondary);
   margin-bottom: 2rem;
   line-height: 1.6;
@@ -521,7 +521,7 @@ body {
 }
 
 .feature-card h3 {
-  font-size: 1.25rem;
+  font-size: 1.35rem;
   font-weight: 600;
   margin-bottom: 1rem;
   position: relative;
@@ -535,6 +535,7 @@ body {
   position: relative;
   z-index: 1;
   font-family: var(--font-body);
+  font-size: 1.05rem;
 }
 
 /* Problem Solution Section */
@@ -578,7 +579,7 @@ body {
 }
 
 .content-block h2 {
-  font-size: 2rem;
+  font-size: 2.15rem;
   font-weight: 700;
   margin-bottom: 1.5rem;
   background: var(--secondary-gradient);
@@ -591,8 +592,9 @@ body {
 .content-block p {
   color: var(--text-secondary);
   margin-bottom: 2rem;
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   font-family: var(--font-body);
+  line-height: 1.65;
 }
 
 .challenge-list,
@@ -608,6 +610,8 @@ body {
   color: var(--text-secondary);
   transition: all 0.3s ease;
   font-family: var(--font-body);
+  font-size: 1.05rem;
+  line-height: 1.6;
 }
 
 .challenge-list li:hover,
@@ -673,7 +677,7 @@ body {
 }
 
 .tech-item h4 {
-  font-size: 1.25rem;
+  font-size: 1.35rem;
   font-weight: 600;
   margin-bottom: 1rem;
   background: var(--secondary-gradient);
@@ -686,6 +690,8 @@ body {
 .tech-item p {
   color: var(--text-secondary);
   font-family: var(--font-body);
+  font-size: 1.05rem;
+  line-height: 1.6;
 }
 
 /* CTA Section */
@@ -733,11 +739,12 @@ body {
 }
 
 .cta-content p {
-  font-size: 1.25rem;
+  font-size: 1.35rem;
   margin-bottom: 2rem;
   opacity: 0.9;
   text-shadow: var(--cta-text-shadow-subtle);
   font-family: var(--font-body);
+  line-height: 1.6;
 }
 
 .cta-buttons {
