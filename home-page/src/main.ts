@@ -12,7 +12,7 @@ document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
         <div class="nav-brand">
           <div class="logo">
             <div class="logo-icon"></div>
-            <span>WarGames AI</span>
+            <span>TrustBuilder AI</span>
           </div>
         </div>
         <div class="nav-links">
@@ -249,7 +249,7 @@ document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
           <div class="footer-brand">
             <div class="logo">
               <div class="logo-icon"></div>
-              <span>WarGames AI</span>
+              <span>TrustBuilder AI</span>
             </div>
             <p>Advanced AI Security Solutions</p>
           </div>
@@ -275,7 +275,7 @@ document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
           </div>
         </div>
         <div class="footer-bottom">
-          <p>&copy; 2025 WarGames AI. All rights reserved.</p>
+          <p>&copy; 2025 TrustBuilder AI. All rights reserved.</p>
         </div>
       </div>
     </footer>
