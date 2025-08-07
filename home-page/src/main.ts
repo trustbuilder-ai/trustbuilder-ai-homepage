@@ -16,13 +16,13 @@ document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
           </div>
         </div>
         <div class="nav-links">
-          <a href="https://forms.gle/64Xgu9qhAPtf6NLdA" target="_blank" class="survey-button evaluator-survey">Evaluator Survey</a>
-          <a href="https://forms.gle/zYLnKi3TdyNBSw5U8" target="_blank" class="survey-button provider-survey">Provider Survey</a>
+          <a href="https://forms.gle/64Xgu9qhAPtf6NLdA" target="_blank" rel="noopener noreferrer" class="survey-button evaluator-survey">Evaluator Survey</a>
+          <a href="https://forms.gle/zYLnKi3TdyNBSw5U8" target="_blank" rel="noopener noreferrer" class="survey-button provider-survey">Provider Survey</a>
           <a href="#features">Features</a>
           <a href="#about">About</a>
           <a href="#contact">Contact</a>
           <div id="theme-picker-container"></div>
-          <a href="https://trustbuilder-ai.github.io/trustbuilder-ai-platform/" target="_blank" class="cta-button">Join Platform</a>
+          <a href="https://trustbuilder-ai.github.io/trustbuilder-ai-platform/" target="_blank" rel="noopener noreferrer" class="cta-button">Join Platform</a>
         </div>
         
         <!-- Mobile Menu Button -->
@@ -35,13 +35,13 @@ document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
         <!-- Mobile Menu -->
         <div class="mobile-menu">
           <div class="mobile-menu-content">
-            <a href="https://forms.gle/64Xgu9qhAPtf6NLdA" target="_blank" class="survey-button evaluator-survey mobile-survey">Evaluator Survey</a>
-            <a href="https://forms.gle/zYLnKi3TdyNBSw5U8" target="_blank" class="survey-button provider-survey mobile-survey">Provider Survey</a>
+            <a href="https://forms.gle/64Xgu9qhAPtf6NLdA" target="_blank" rel="noopener noreferrer" class="survey-button evaluator-survey mobile-survey">Evaluator Survey</a>
+            <a href="https://forms.gle/zYLnKi3TdyNBSw5U8" target="_blank" rel="noopener noreferrer" class="survey-button provider-survey mobile-survey">Provider Survey</a>
             <a href="#features">Features</a>
             <a href="#about">About</a>
             <a href="#contact">Contact</a>
             <div id="mobile-theme-picker-container"></div>
-            <a href="https://trustbuilder-ai.github.io/trustbuilder-ai-platform/" target="_blank" class="cta-button mobile-cta">Join Platform</a>
+            <a href="https://trustbuilder-ai.github.io/trustbuilder-ai-platform/" target="_blank" rel="noopener noreferrer" class="cta-button mobile-cta">Join Platform</a>
           </div>
         </div>
       </div>
@@ -59,8 +59,8 @@ document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
             The crowdsourced security platform that validates AI safety through competitive wargames, connecting evaluators and providers to build more secure AI systems
           </p>
           <div class="hero-buttons">
-            <a href="https://trustbuilder-ai.github.io/trustbuilder-ai-platform/" target="_blank" class="primary-button">Join the Platform</a>
-            <a href="https://trustbuilder-ai.github.io/trustbuilder-ai-platform/" target="_blank" class="secondary-button">View Challenges</a>
+            <a href="https://trustbuilder-ai.github.io/trustbuilder-ai-platform/" target="_blank" rel="noopener noreferrer" class="primary-button">Join the Platform</a>
+            <a href="https://trustbuilder-ai.github.io/trustbuilder-ai-platform/" target="_blank" rel="noopener noreferrer" class="secondary-button">View Challenges</a>
           </div>
         </div>
         <div class="hero-visual">
@@ -222,8 +222,8 @@ document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
           </div>
         </div>
         <div class="cta-buttons" style="margin-top: 3rem;">
-          <a href="https://trustbuilder-ai.github.io/trustbuilder-ai-platform/" target="_blank" class="primary-button large">Visit Platform</a>
-          <a href="https://github.com/trustbuilder-ai" target="_blank" class="secondary-button large">View on GitHub</a>
+          <a href="https://trustbuilder-ai.github.io/trustbuilder-ai-platform/" target="_blank" rel="noopener noreferrer" class="primary-button large">Visit Platform</a>
+          <a href="https://github.com/trustbuilder-ai" target="_blank" rel="noopener noreferrer" class="secondary-button large">View on GitHub</a>
         </div>
       </div>
     </section>
@@ -235,8 +235,8 @@ document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
           <h2>Ready to Join the AI Security Revolution?</h2>
           <p>Whether you're a security researcher looking to showcase skills or an AI provider seeking validation, start your journey today</p>
           <div class="cta-buttons">
-            <a href="https://trustbuilder-ai.github.io/trustbuilder-ai-platform/" target="_blank" class="primary-button large">Join the Platform</a>
-            <a href="https://trustbuilder-ai.github.io/trustbuilder-ai-platform/" target="_blank" class="secondary-button large">View Live Tournaments</a>
+            <a href="https://trustbuilder-ai.github.io/trustbuilder-ai-platform/" target="_blank" rel="noopener noreferrer" class="primary-button large">Join the Platform</a>
+            <a href="https://trustbuilder-ai.github.io/trustbuilder-ai-platform/" target="_blank" rel="noopener noreferrer" class="secondary-button large">View Live Tournaments</a>
           </div>
         </div>
       </div>
