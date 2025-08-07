@@ -8,7 +8,8 @@
     "build": "tsc && vite build",
     "preview": "vite preview",
     "lint": "eslint . --ext .ts,.tsx",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "download-fonts": "node scripts/download-fonts-simple.js"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^6.0.1",
