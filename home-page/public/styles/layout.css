@@ -1216,15 +1216,15 @@ body {
   .tech-item:hover {
     transform: none;
   }
-  
+
   .nav-links a:hover::after {
     width: 0;
   }
-  
+
   .link-group a:hover {
     transform: none;
   }
-  
+
   /* Increase tap targets for better touch interaction */
   .mobile-menu-content a {
     min-height: 44px !important;
@@ -1232,12 +1232,12 @@ body {
     align-items: center !important;
     justify-content: center !important;
   }
-  
+
   .mobile-menu-toggle {
     min-height: 44px !important;
     min-width: 44px !important;
   }
-  
+
   .survey-button {
     min-height: 44px !important;
   }

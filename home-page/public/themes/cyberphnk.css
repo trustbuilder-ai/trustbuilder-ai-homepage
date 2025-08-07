@@ -335,13 +335,23 @@ body {
 }
 
 @keyframes pulse-green {
-  0%, 100% { box-shadow: var(--survey-button-glow); }
-  50% { box-shadow: var(--survey-button-glow-hover); }
+  0%,
+  100% {
+    box-shadow: var(--survey-button-glow);
+  }
+  50% {
+    box-shadow: var(--survey-button-glow-hover);
+  }
 }
 
 @keyframes pulse-cyan {
-  0%, 100% { box-shadow: 0 0 15px rgba(0, 255, 255, 0.6); }
-  50% { box-shadow: 0 0 20px rgba(0, 255, 255, 0.8); }
+  0%,
+  100% {
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.6);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.8);
+  }
 }
 
 /* Mobile Survey Button Styles */
@@ -353,7 +363,7 @@ body {
     margin-bottom: 0.5rem !important;
     font-size: 1rem !important;
   }
-  
+
   .survey-button {
     font-size: 0.85rem !important;
     padding: 6px 12px !important;
@@ -365,7 +375,7 @@ body {
     padding: 0.875rem 1.25rem !important;
     font-size: 0.95rem !important;
   }
-  
+
   .survey-button {
     font-size: 0.8rem !important;
     padding: 5px 10px !important;

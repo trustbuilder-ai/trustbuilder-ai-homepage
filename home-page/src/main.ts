@@ -4,7 +4,9 @@ import { createThemePicker } from "./theme-picker";
 // Initialize theme switcher
 const themeSwitcher = new ThemeSwitcher();
 
-document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
+const appElement = document.querySelector<HTMLDivElement>("#app");
+if (appElement) {
+  appElement.innerHTML = `
   <div class="landing-page">
     <!-- Navigation -->
     <nav class="nav">
@@ -281,6 +283,7 @@ document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
     </footer>
   </div>
 `;
+}
 
 // Add theme picker to navigation
 const themePickerContainer = document.getElementById("theme-picker-container");
@@ -290,74 +293,80 @@ if (themePickerContainer) {
 }
 
 // Add theme picker to mobile navigation
-const mobileThemePickerContainer = document.getElementById("mobile-theme-picker-container");
+const mobileThemePickerContainer = document.getElementById(
+  "mobile-theme-picker-container",
+);
 if (mobileThemePickerContainer) {
   const mobileThemePicker = createThemePicker(themeSwitcher);
   mobileThemePickerContainer.appendChild(mobileThemePicker);
 }
 
 // Mobile menu functionality
-const mobileMenuToggle = document.querySelector('.mobile-menu-toggle') as HTMLButtonElement;
-const mobileMenu = document.querySelector('.mobile-menu') as HTMLDivElement;
-const mobileMenuLinks = document.querySelectorAll('.mobile-menu a');
+const mobileMenuToggle = document.querySelector(
+  ".mobile-menu-toggle",
+) as HTMLButtonElement;
+const mobileMenu = document.querySelector(".mobile-menu") as HTMLDivElement;
+const mobileMenuLinks = document.querySelectorAll(".mobile-menu a");
 
 let isMenuOpen = false;
 
 function toggleMobileMenu() {
   isMenuOpen = !isMenuOpen;
-  
+
   if (isMenuOpen) {
-    mobileMenuToggle.classList.add('active');
-    mobileMenu.classList.add('active');
-    document.body.style.overflow = 'hidden'; // Prevent scrolling when menu is open
+    mobileMenuToggle.classList.add("active");
+    mobileMenu.classList.add("active");
+    document.body.style.overflow = "hidden"; // Prevent scrolling when menu is open
   } else {
-    mobileMenuToggle.classList.remove('active');
-    mobileMenu.classList.remove('active');
-    document.body.style.overflow = ''; // Restore scrolling
+    mobileMenuToggle.classList.remove("active");
+    mobileMenu.classList.remove("active");
+    document.body.style.overflow = ""; // Restore scrolling
   }
 }
 
 function closeMobileMenu() {
   if (isMenuOpen) {
     isMenuOpen = false;
-    mobileMenuToggle.classList.remove('active');
-    mobileMenu.classList.remove('active');
-    document.body.style.overflow = '';
+    mobileMenuToggle.classList.remove("active");
+    mobileMenu.classList.remove("active");
+    document.body.style.overflow = "";
   }
 }
 
 // Toggle menu when hamburger button is clicked
 if (mobileMenuToggle) {
-  mobileMenuToggle.addEventListener('click', toggleMobileMenu);
+  mobileMenuToggle.addEventListener("click", toggleMobileMenu);
 }
 
 // Close menu when a link is clicked
-mobileMenuLinks.forEach(link => {
-  link.addEventListener('click', () => {
+mobileMenuLinks.forEach((link) => {
+  link.addEventListener("click", () => {
     // Small delay to allow navigation before closing menu
     setTimeout(closeMobileMenu, 150);
   });
 });
 
 // Close menu when clicking outside
-document.addEventListener('click', (event) => {
+document.addEventListener("click", (event) => {
   const target = event.target as HTMLElement;
-  if (isMenuOpen && 
-      !mobileMenu.contains(target) && 
-      !mobileMenuToggle.contains(target)) {
+  if (
+    isMenuOpen &&
+    !mobileMenu.contains(target) &&
+    !mobileMenuToggle.contains(target)
+  ) {
     closeMobileMenu();
   }
 });
 
 // Close menu on escape key
-document.addEventListener('keydown', (event) => {
-  if (event.key === 'Escape' && isMenuOpen) {
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && isMenuOpen) {
     closeMobileMenu();
   }
 });
 
 // Handle window resize
-window.addEventListener('resize', () => {
+window.addEventListener("resize", () => {
   // Close mobile menu if window is resized to desktop size
   if (window.innerWidth > 768 && isMenuOpen) {
     closeMobileMenu();
@@ -365,17 +374,17 @@ window.addEventListener('resize', () => {
 });
 
 // Smooth scrolling for anchor links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
+document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+  anchor.addEventListener("click", function (e) {
     e.preventDefault();
     const targetElement = e.target as HTMLAnchorElement;
-    const href = targetElement.getAttribute('href');
+    const href = targetElement.getAttribute("href");
     if (href) {
       const target = document.querySelector(href);
       if (target) {
         target.scrollIntoView({
-          behavior: 'smooth',
-          block: 'start'
+          behavior: "smooth",
+          block: "start",
         });
       }
     }
