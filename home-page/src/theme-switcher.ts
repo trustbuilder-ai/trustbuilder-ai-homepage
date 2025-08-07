@@ -12,12 +12,12 @@ export class ThemeSwitcher {
     // Create link elements for both themes
     this.gummyloopLink = document.createElement("link");
     this.gummyloopLink.rel = "stylesheet";
-    this.gummyloopLink.href = import.meta.env.BASE_URL + 'themes/gummyloop.css';
+    this.gummyloopLink.href = import.meta.env.BASE_URL + "themes/gummyloop.css";
     this.gummyloopLink.id = "gummyloop-theme";
 
     this.cyberphnkLink = document.createElement("link");
     this.cyberphnkLink.rel = "stylesheet";
-    this.cyberphnkLink.href = import.meta.env.BASE_URL + 'themes/cyberphnk.css';
+    this.cyberphnkLink.href = import.meta.env.BASE_URL + "themes/cyberphnk.css";
     this.cyberphnkLink.id = "cyberphnk-theme";
 
     // Add both to head but disable cyberphnk initially
@@ -44,9 +44,11 @@ export class ThemeSwitcher {
     if (theme === "gummyloop") {
       this.gummyloopLink.disabled = false;
       this.cyberphnkLink.disabled = true;
+      document.body.className = "gummyloop";
     } else {
       this.gummyloopLink.disabled = true;
       this.cyberphnkLink.disabled = false;
+      document.body.className = "cyberphnk";
     }
 
     // Save to localStorage

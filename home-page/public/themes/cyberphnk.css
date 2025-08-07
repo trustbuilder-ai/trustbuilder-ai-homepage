@@ -194,6 +194,15 @@
 
   /* Animation Values */
   --hue-shift: 60deg;
+
+  /* Survey Button Colors */
+  --survey-button-bg: rgba(0, 255, 136, 0.15);
+  --survey-button-border: rgba(0, 255, 136, 0.6);
+  --survey-button-text: #00ff88;
+  --survey-button-bg-hover: rgba(0, 255, 136, 0.25);
+  --survey-button-border-hover: rgba(0, 255, 136, 0.8);
+  --survey-button-glow: 0 0 15px rgba(0, 255, 136, 0.6);
+  --survey-button-glow-hover: 0 0 20px rgba(0, 255, 136, 0.8);
 }
 
 /* Cyberpunk-specific effects */
@@ -285,4 +294,90 @@ body {
   pointer-events: none;
   z-index: -1;
   opacity: 0.3;
+}
+
+/* Survey Button Styles */
+.survey-button {
+  padding: 8px 16px !important;
+  background: var(--survey-button-bg) !important;
+  border: 1px solid var(--survey-button-border) !important;
+  border-radius: var(--radius-md) !important;
+  color: var(--survey-button-text) !important;
+  text-decoration: none !important;
+  font-size: 0.9rem !important;
+  font-weight: 500 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+  text-align: center !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  transition: all 0.3s ease !important;
+  box-shadow: var(--survey-button-glow) !important;
+  text-shadow: var(--text-shadow-subtle) !important;
+  backdrop-filter: var(--glass-blur) !important;
+  -webkit-backdrop-filter: var(--glass-blur) !important;
+}
+
+.survey-button:hover {
+  background: var(--survey-button-bg-hover) !important;
+  border-color: var(--survey-button-border-hover) !important;
+  box-shadow: var(--survey-button-glow-hover) !important;
+  transform: translateY(-2px) !important;
+}
+
+.survey-button.evaluator-survey {
+  animation: pulse-green 2s infinite !important;
+}
+
+.survey-button.provider-survey {
+  animation: pulse-cyan 2s infinite 0.5s !important;
+}
+
+@keyframes pulse-green {
+  0%,
+  100% {
+    box-shadow: var(--survey-button-glow);
+  }
+  50% {
+    box-shadow: var(--survey-button-glow-hover);
+  }
+}
+
+@keyframes pulse-cyan {
+  0%,
+  100% {
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.6);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.8);
+  }
+}
+
+/* Mobile Survey Button Styles */
+@media (max-width: 768px) {
+  .mobile-survey {
+    width: 100% !important;
+    max-width: 280px !important;
+    padding: 1rem 1.5rem !important;
+    margin-bottom: 0.5rem !important;
+    font-size: 1rem !important;
+  }
+
+  .survey-button {
+    font-size: 0.85rem !important;
+    padding: 6px 12px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .mobile-survey {
+    padding: 0.875rem 1.25rem !important;
+    font-size: 0.95rem !important;
+  }
+
+  .survey-button {
+    font-size: 0.8rem !important;
+    padding: 5px 10px !important;
+  }
 }
