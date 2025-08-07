@@ -99,13 +99,6 @@ html.dark {
 .gap-lg { gap: var(--spacing-lg); }
 .gap-xl { gap: var(--spacing-xl); }
 
-.flex {
-    display: flex;
-}
-
-.flex-col {
-    flex-direction: column;
-}
 
 .items-center {
     align-items: center;
@@ -442,6 +435,7 @@ html.dark {
 .hidden { display: none; }
 .block { display: block; }
 .flex { display: flex; }
+.flex-col { flex-direction: column; }
 .inline-flex { display: inline-flex; }
 
 .w-full { width: 100%; }

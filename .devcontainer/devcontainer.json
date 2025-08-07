@@ -8,5 +8,5 @@
       "onAutoForward": "openPreview"
     }
   },
-  "postCreateCommand": "setup_homepage_dev"
+  "postCreateCommand": "make setup_homepage_dev"
 }
