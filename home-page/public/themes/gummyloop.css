@@ -269,24 +269,24 @@
 }
 
 /* Gummyloop-specific playful styling */
-.hero-title,
-.section-title {
-  letter-spacing: -0.02em !important;
+.gummyloop .hero-title,
+.gummyloop .section-title {
+  letter-spacing: -0.02em;
 }
 
-.feature-card h3,
-.content-block h2,
-.tech-item h4 {
-  letter-spacing: -0.01em !important;
+.gummyloop .feature-card h3,
+.gummyloop .content-block h2,
+.gummyloop .tech-item h4 {
+  letter-spacing: -0.01em;
 }
 
 /* Add bouncy animation to feature cards */
-.feature-card {
-  transform-origin: center bottom !important;
+.gummyloop .feature-card {
+  transform-origin: center bottom;
 }
 
-.feature-card:hover {
-  animation: gummy-bounce 0.6s ease-out !important;
+.gummyloop .feature-card:hover {
+  animation: gummy-bounce 0.6s ease-out;
 }
 
 @keyframes gummy-bounce {
@@ -297,10 +297,10 @@
 }
 
 /* Playful button hover effects */
-.primary-button:hover,
-.secondary-button:hover,
-.cta-button:hover {
-  animation: gummy-wiggle 0.4s ease-in-out !important;
+.gummyloop .primary-button:hover,
+.gummyloop .secondary-button:hover,
+.gummyloop .cta-button:hover {
+  animation: gummy-wiggle 0.4s ease-in-out;
 }
 
 @keyframes gummy-wiggle {
@@ -310,17 +310,17 @@
 }
 
 /* Rounded corners for gummy feel */
-.feature-card,
-.content-block,
-.tech-item,
-.floating-card {
-  border-radius: calc(var(--radius-xxl) + 4px) !important;
+.gummyloop .feature-card,
+.gummyloop .content-block,
+.gummyloop .tech-item,
+.gummyloop .floating-card {
+  border-radius: calc(var(--radius-xxl) + 4px);
 }
 
-.primary-button,
-.secondary-button,
-.cta-button {
-  border-radius: calc(var(--radius-xl) + 2px) !important;
+.gummyloop .primary-button,
+.gummyloop .secondary-button,
+.gummyloop .cta-button {
+  border-radius: calc(var(--radius-xl) + 2px);
 }
 
 /* Mobile Survey Button Styles */

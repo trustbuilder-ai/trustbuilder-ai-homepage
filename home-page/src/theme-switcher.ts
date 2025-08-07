@@ -44,9 +44,11 @@ export class ThemeSwitcher {
     if (theme === "gummyloop") {
       this.gummyloopLink.disabled = false;
       this.cyberphnkLink.disabled = true;
+      document.body.className = "gummyloop";
     } else {
       this.gummyloopLink.disabled = true;
       this.cyberphnkLink.disabled = false;
+      document.body.className = "cyberphnk";
     }
 
     // Save to localStorage
